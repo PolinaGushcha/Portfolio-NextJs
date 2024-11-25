@@ -8,9 +8,8 @@ export const Home = () => {
         I am a frontend developer on <span>{TITLE_TECHNICS[0]}</span>
       </h1>
       <p>
-        Junior Frontend developer on mobile and web applications with 1.5 years of experience. I develop both beautiful
-        smooth animation of interfaces and work with Rest API. My broad experience includes the fields of e-commerce,
-        health apps, logistics and transportation.
+        Junior Frontend developer on mobile and web applications with 1.5 years of experience. I develop both beautiful smooth animation of interfaces
+        and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and transportation.
       </p>
       <div>
         <Button />
