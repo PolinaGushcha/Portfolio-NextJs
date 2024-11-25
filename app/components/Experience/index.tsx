@@ -1,4 +1,4 @@
-import { EDUCATION, EXPERIENCE } from '@/app/constants/data.constants'
+import { EDUCATION, EXPERIENCE } from '@constants/data.constants'
 
 export const Experience = () => {
   return (

@@ -1,4 +1,4 @@
-import { TITLE_TECHNICS } from '@/app/constants/data.constants'
+import { TITLE_TECHNICS } from '@constants/data.constants'
 
 export const Work = () => {
   return (

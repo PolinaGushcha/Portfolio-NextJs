@@ -1,6 +1,8 @@
 'use client'
 
-// import Image from 'next/image'
+import GmailIcon from '@icons/gmail.icon.svg'
+import LocationIcon from '@icons/location.icon.svg'
+import PhoneIcon from '@icons/phone.icon.svg'
 
 export const Contacts = () => {
   return (
@@ -31,22 +33,22 @@ export const Contacts = () => {
       </div>
       <article>
         <div>
-          {/* <Image alt='phone icon' src={phoneIcon} /> */}
+          <PhoneIcon />
           <div>
             <h3>Phone</h3>
             <p>+48 502 270 962</p>
           </div>
         </div>
         <div>
-          {/* <Image alt='email icon' src={'./'} /> */}
           <div>
+            <GmailIcon />
             <h3>Gmail</h3>
             <p>polina.hushcha&#64;gmail.com</p>
           </div>
         </div>
         <div>
-          {/* <Image alt='location icon' src={'./'} /> */}
           <div>
+            <LocationIcon />
             <h3>My current location</h3>
             <p>Poland, Poznan</p>
           </div>

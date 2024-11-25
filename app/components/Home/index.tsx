@@ -1,5 +1,5 @@
-import { TITLE_TECHNICS } from '@/app/constants/data.constants'
-import { Button } from '@/app/ui/button.ui'
+import { TITLE_TECHNICS } from '@constants/data.constants'
+import { Button } from '@ui/button.ui'
 
 export const Home = () => {
   return (
