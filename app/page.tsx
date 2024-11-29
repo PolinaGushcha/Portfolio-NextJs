@@ -1,6 +1,6 @@
 'use client'
 
-import { Loading } from 'app/components/Loading'
+import Loading from '@components/Loading'
 import { useState } from 'react'
 
 import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
