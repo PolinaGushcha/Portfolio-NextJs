@@ -5,10 +5,12 @@ import LocationIcon from '@icons/location.icon.svg'
 import PhoneIcon from '@icons/phone.icon.svg'
 
 export const Contacts = () => {
+  const handleSubmit = () => {}
+
   return (
     <section id='contacts'>
       <div>
-        <form action='' method='post' onSubmit={() => {}}>
+        <form onSubmit={handleSubmit}>
           <h2>Let&#39;s work together&#33;</h2>
           <p>I code beautifully simple things and i love what i do. Just simple like that&#33;</p>
           <input type='text' name='first_name' id='' placeholder='First name' />
