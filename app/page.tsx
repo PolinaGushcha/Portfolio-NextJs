@@ -1,18 +1,37 @@
+'use client'
+
+import { Loading } from 'app/components/Loading'
+import { useState } from 'react'
+
 import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
 import styles from './page.module.css'
 
 export default function Main() {
+  const [isLoading, setIsLoading] = useState<boolean>(!!sessionStorage.getItem('user'))
+
+  window.onload = function () {
+    if (!sessionStorage.getItem('user')) {
+      setTimeout(() => {
+        sessionStorage.setItem('user', 'user')
+        setIsLoading(true)
+      }, 3000)
+    }
+  }
+
   return (
-    <div className={styles.page}>
-      <Navigation />
-      <main>
-        <Home />
-        <Experience />
-        <Skills />
-        <Work />
-        <Contacts />
-      </main>
-      <Footer />
-    </div>
+    <>
+      {!isLoading && <Loading />}
+      <div className={styles.page}>
+        <Navigation />
+        <main>
+          <Home />
+          <Experience />
+          <Skills />
+          <Work />
+          <Contacts />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
