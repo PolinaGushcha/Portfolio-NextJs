@@ -7,8 +7,10 @@ export const EXPERIENCE = [
     duration: 'June 2024 – present',
     description: [
       'On a project using microservice architecture, participated in the development of the overall structure of the application from the start',
-      'I participate in the creation of basic functions, variables and components in the application core. I am involved in application navigation and ui development',
-      'Responsible for the development of a mobile application. I rewrite web components for mobile ones, conduct onboarding and code reviews for new programmers on a React Native project'
+      'I participate in the creation of basic functions, variables and components in the application core. ' +
+        'I am involved in application navigation and ui development',
+      'Responsible for the development of a mobile application. ' +
+        'I rewrite web components for mobile ones, conduct onboarding and code reviews for new programmers on a React Native project'
     ],
     products: [{ id: 1, name: 'cooking-ai', description: 'app description', link: '' }],
     team: ['PM', 'GD']
@@ -18,7 +20,8 @@ export const EXPERIENCE = [
     name: 'Milestep',
     duration: 'February 2024 – June 2024',
     description: [
-      'Web application on React for tracking logistics deliveries. Displayed a large amount of data using react-admin tables. I developed the front from scratch',
+      'Web application on React for tracking logistics deliveries. ' +
+        'Displayed a large amount of data using react-admin tables. I developed the front from scratch',
       'Communicating with the backend, developed the frontend client and admin sides of the application'
     ],
     products: [{ id: 1, name: 'Web application for optimizing logistics supplies', description: 'app description' }],
@@ -59,4 +62,14 @@ export const EDUCATION = [
     description: 'description',
     date: 'date'
   }
+]
+
+export const TECHNIQUES_OPTIONS = [
+  { id: 1, value: 'html&css', name: 'HTML & CSS website layout' },
+  { id: 2, value: 'react', name: 'React' },
+  { id: 3, value: 'nextjs', name: 'Next.js' },
+  { id: 4, value: 'reactnative', name: 'React Native' },
+  { id: 5, value: 'ionic', name: 'Ionic' },
+  { id: 6, value: 'angular', name: 'Angular' },
+  { id: 7, value: 'other', name: 'Other' }
 ]

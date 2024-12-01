@@ -1,35 +1,81 @@
 'use client'
 
+import { ErrorMessage } from '@components/ErrorMessage'
+import { TECHNIQUES_OPTIONS } from '@constants/data.constants'
+import { yupResolver } from '@hookform/resolvers/yup'
 import GmailIcon from '@icons/gmail.icon.svg'
 import LocationIcon from '@icons/location.icon.svg'
 import PhoneIcon from '@icons/phone.icon.svg'
+import { sendEmail } from 'app/api/sendEmail'
+import { schema } from 'app/config/formSchema.config'
+import { SubmitHandler, useForm } from 'react-hook-form'
+
+export interface IContacts {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  technique: NonNullable<'html&css' | 'react' | 'nextjs' | 'reactnative' | 'ionic' | 'angular' | 'other'>
+  message: string
+}
 
 export const Contacts = () => {
-  const handleSubmit = () => {}
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<IContacts>({
+    resolver: yupResolver(schema),
+    mode: 'onChange'
+  })
+
+  const onSubmit: SubmitHandler<IContacts> = (data: IContacts) => {
+    const fullname = `${data.firstName} ${data.lastName}`
+    sendEmail(fullname, data.email, data.phone, data.technique, data.message)
+    reset()
+  }
 
   return (
     <section id='contacts'>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <h2>Let&#39;s work together&#33;</h2>
           <p>I code beautifully simple things and i love what i do. Just simple like that&#33;</p>
-          <input type='text' name='first_name' id='' placeholder='First name' />
-          <input type='text' name='last_name' id='' placeholder='Last name' />
-          <input type='email' name='email' id='' placeholder='Email' />
-          <input type='tel' name='phone' id='' placeholder='Phone number' />
-          <label htmlFor='technique'>
-            Please choose an option
-            <select id='technique' name='technique'>
-              <option value='html&css'>HTML & CSS website layout</option>
-              <option value='react'>React</option>
-              <option value='nextjs'>Next.js</option>
-              <option value='reactnative'>React Native</option>
-              <option value='ionic'>Ionic</option>
-              <option value='angular'>Angular</option>
-              <option value='other'>Other</option>
-            </select>
-          </label>
-          <input type='text' name='description' id='description' placeholder='Message' />
+          <div>
+            <input type='text' placeholder='First name' {...register('firstName')} />
+            {errors.firstName && <ErrorMessage message={errors.firstName.message} />}
+          </div>
+          <div>
+            <input type='text' placeholder='Last name' {...register('lastName')} />
+            {errors.lastName && <ErrorMessage message={errors.lastName.message} />}
+          </div>
+          <div>
+            <input type='email' placeholder='Email' {...register('email')} />
+            {errors.email && <ErrorMessage message={errors.email.message} />}
+          </div>
+          <div>
+            <input type='tel' placeholder='Phone number' {...register('phone')} />
+            {errors.phone && <ErrorMessage message={errors.phone.message} />}
+          </div>
+          <div>
+            <label htmlFor='technique'>
+              Please choose an option
+              <select id='technique' {...register('technique')}>
+                <option value=''>--Select--</option>
+                {TECHNIQUES_OPTIONS.map(el => (
+                  <option key={el.id} value={el.value}>
+                    {el.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {errors.technique && <ErrorMessage message={errors.technique.message} />}
+          </div>
+          <div>
+            <input type='text' id='message' placeholder='Message' {...register('message')} />
+            {errors.message && <ErrorMessage message={errors.message.message} />}
+          </div>
           <button type='submit'>Send message</button>
         </form>
       </div>

@@ -1,22 +1,23 @@
 'use client'
 
 import Loading from '@components/Loading'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
 import styles from './page.module.css'
 
 export default function Main() {
-  const [isLoading, setIsLoading] = useState<boolean>(!!sessionStorage.getItem('user'))
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  window.onload = function () {
+  useEffect(() => {
+    setIsLoading(!!sessionStorage.getItem('user'))
     if (!sessionStorage.getItem('user')) {
       setTimeout(() => {
         sessionStorage.setItem('user', 'user')
         setIsLoading(true)
       }, 3000)
     }
-  }
+  }, [])
 
   return (
     <>
