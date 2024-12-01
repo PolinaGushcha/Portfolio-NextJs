@@ -1,3 +1,10 @@
 export const Footer = () => {
-  return <footer></footer>
+  return (
+    <footer>
+      <div>
+        <p>Next. js</p>
+        <p>date</p>
+      </div>
+    </footer>
+  )
 }

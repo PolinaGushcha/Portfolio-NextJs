@@ -1,5 +1,6 @@
 'use client'
 
+import { Greeting } from '@components/Greeting'
 import Loading from '@components/Loading'
 import { useEffect, useState } from 'react'
 
@@ -25,6 +26,7 @@ export default function Main() {
       <div className={styles.page}>
         <Navigation />
         <main>
+          <Greeting />
           <Home />
           <Experience />
           <Skills />

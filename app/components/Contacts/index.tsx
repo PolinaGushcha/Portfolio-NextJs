@@ -8,7 +8,10 @@ import LocationIcon from '@icons/location.icon.svg'
 import PhoneIcon from '@icons/phone.icon.svg'
 import { sendEmail } from 'app/api/sendEmail'
 import { schema } from 'app/config/formSchema.config'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 export interface IContacts {
   firstName: string
@@ -23,6 +26,7 @@ export const Contacts = () => {
   const {
     register,
     reset,
+    setValue,
     handleSubmit,
     formState: { errors }
   } = useForm<IContacts>({
@@ -30,9 +34,13 @@ export const Contacts = () => {
     mode: 'onChange'
   })
 
+  const [phoneInput, setPhoneInput] = useState('')
+
   const onSubmit: SubmitHandler<IContacts> = (data: IContacts) => {
     const fullname = `${data.firstName} ${data.lastName}`
-    sendEmail(fullname, data.email, data.phone, data.technique, data.message)
+    setPhoneInput('')
+    // sendEmail(fullname, data.email, data.phone, data.technique, data.message)
+    console.log(data)
     reset()
   }
 
@@ -55,14 +63,21 @@ export const Contacts = () => {
             {errors.email && <ErrorMessage message={errors.email.message} />}
           </div>
           <div>
-            <input type='tel' placeholder='Phone number' {...register('phone')} />
+            <PhoneInput
+              country={'pl'}
+              value={phoneInput}
+              onChange={phone => {
+                setPhoneInput(phone)
+                setValue('phone', phone)
+              }}
+            />
             {errors.phone && <ErrorMessage message={errors.phone.message} />}
           </div>
           <div>
             <label htmlFor='technique'>
               Please choose an option
               <select id='technique' {...register('technique')}>
-                <option value=''>--Select--</option>
+                <option value=''>-- Select --</option>
                 {TECHNIQUES_OPTIONS.map(el => (
                   <option key={el.id} value={el.value}>
                     {el.name}
