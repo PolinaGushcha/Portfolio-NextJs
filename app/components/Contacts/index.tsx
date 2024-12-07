@@ -39,7 +39,7 @@ export const Contacts = () => {
   const onSubmit: SubmitHandler<IContacts> = (data: IContacts) => {
     const fullname = `${data.firstName} ${data.lastName}`
     setPhoneInput('')
-    // sendEmail(fullname, data.email, data.phone, data.technique, data.message)
+    sendEmail(fullname, data.email, data.phone, data.technique, data.message)
     console.log(data)
     reset()
   }

@@ -1,29 +1,37 @@
 'use client'
 
+import Background from '@components/Background'
 import { Greeting } from '@components/Greeting'
-import Loading from '@components/Loading'
+import { Loading } from '@components/Loading'
 import { useEffect, useState } from 'react'
 
 import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
-import styles from './page.module.css'
 
 export default function Main() {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean | undefined>(undefined)
 
   useEffect(() => {
-    setIsLoading(!!sessionStorage.getItem('user'))
+    setIsLoading(!sessionStorage.getItem('user'))
     if (!sessionStorage.getItem('user')) {
       setTimeout(() => {
         sessionStorage.setItem('user', 'user')
-        setIsLoading(true)
+        setIsLoading(false)
       }, 3000)
     }
   }, [])
 
-  return (
-    <>
-      {!isLoading && <Loading />}
-      <div className={styles.page}>
+  if (isLoading === undefined) {
+    return <></>
+  }
+  if (isLoading) {
+    return (
+      <Background>
+        <Loading />
+      </Background>
+    )
+  } else {
+    return (
+      <Background>
         <Navigation />
         <main>
           <Greeting />
@@ -34,7 +42,7 @@ export default function Main() {
           <Contacts />
         </main>
         <Footer />
-      </div>
-    </>
-  )
+      </Background>
+    )
+  }
 }

@@ -7,7 +7,7 @@ const ErrorPage = () => {
 
   return (
     <section>
-      <h1>Page not found :(((</h1>
+      <h1>Page not found</h1>
       <button onClick={() => router.back()}>Go back</button>
     </section>
   )
