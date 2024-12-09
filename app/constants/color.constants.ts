@@ -1,10 +1,70 @@
-export const COLORS = {
-  // цвета
+export interface IBackgroundColorsPalette {
+  red: [string, string, string[], string, string]
+  green: [string, string, string[], string, string]
+  blue: [string, string, string[], string, string]
+  purple: [string, string, string[], string, string]
 }
 
-export const backgroundColorsPalette = {
-  red: ['#FAA613', '#A10702'],
-  green: ['#69AD54', '#003C00'],
-  blue: ['#2222DD', '#C8F8FF'],
-  purple: ['#6c00a2', '#001152']
+export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
+  red: [
+    '#FAA613',
+    '#E3725D',
+    [
+      'rgba(139, 0, 2, 0.8)',
+      'rgba(139, 0, 2, 0)',
+      'rgba(175, 6, 0, 0.8)',
+      'rgba(175, 6, 0, 0)',
+      'rgba(157, 173, 131, 0.8)',
+      'rgba(157, 173, 131, 0)',
+      'rgba(243, 163, 97, 0.8)',
+      'rgba(243, 163, 97, 0)',
+      'rgba(255, 252, 208, 0.8)',
+      'rgba(255, 252, 208, 0)'
+    ],
+    'rgba(255, 252, 208, 0.8)',
+    'rgba(255, 252, 208, 0)'
+  ],
+  green: [
+    '#69AD54',
+    '#003C00',
+    [
+      'rgba(185, 239, 0, 0.8)',
+      'rgba(185, 239, 0, 0)',
+      'rgba(51, 146, 3, 0.8)',
+      'rgba(51, 146, 3, 0)',
+      'rgba(255, 238, 0, 0.8)',
+      'rgba(255, 238, 0, 0)',
+      'rgba(15, 1, 103, 0.8)',
+      'rgba(15, 1, 103, 0)',
+      'rgba(45, 244, 201, 0.8)',
+      'rgba(45, 244, 201, 0)'
+    ],
+    'rgba(197, 255, 0, 0.8)',
+    'rgba(197, 255, 0, 0)'
+  ],
+  blue: [
+    '#2222DD',
+    '#C8F8FF',
+    [
+      'rgba(15, 1, 103, 0.8)',
+      'rgba(15, 1, 103, 0)',
+      'rgba(222, 96, 254, 0.8)',
+      'rgba(222, 96, 254, 0)',
+      'rgba(255, 193, 0, 0.8)',
+      'rgba(255, 193, 0, 0)',
+      'rgba(15, 1, 103, 0.8)',
+      'rgba(15, 1, 103, 0)',
+      'rgba(200, 248, 255, 0.8)',
+      'rgba(200, 248, 255, 0)'
+    ],
+    'rgba(130, 35, 136, 0.8)',
+    'rgba(130, 35, 136, 0)'
+  ],
+  purple: [
+    '#6c00a2',
+    '#001152',
+    ['#1271ffcc', '#1271ff00', '#dd4affcc', '#dd4aff00', '##64dcffcc', '#64dcff00', '#c83232cc', '#c8323200', '#b4b432cc', '#b4b43200'],
+    'rgba(140, 100, 255, 0.8)',
+    'rgba(140, 100, 255, 0)'
+  ]
 }

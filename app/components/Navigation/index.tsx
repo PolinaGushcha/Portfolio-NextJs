@@ -1,6 +1,11 @@
-export const Navigation = () => {
+import { ChangeColors } from '@components/ChangeColors'
+
+export const Navigation: React.FC = () => {
   return (
     <nav>
+      <div>
+        <ChangeColors />
+      </div>
       <ul>
         <li>
           <a href='#home'>Home</a>

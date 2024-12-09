@@ -1,27 +1,22 @@
-import { backgroundColorsPalette } from '@constants/color.constants'
+import { BACKGROUNDCOLORSPALETTE } from '@constants/color.constants'
+import colorsStore from 'app/store/colorsStore'
+import clsx from 'clsx'
+import { observer } from 'mobx-react-lite'
 
 import styles from './changeColors.module.css'
 
-export const ChangeColors = () => {
-  const handleColorChange = (color: string) => {
-    switch (color) {
-      case 'red':
-        return [backgroundColorsPalette.red[0], backgroundColorsPalette.red[1]]
-      case 'green':
-        return [backgroundColorsPalette.green[0], backgroundColorsPalette.green[1]]
-      case 'blue':
-        return [backgroundColorsPalette.blue[0], backgroundColorsPalette.blue[1]]
-      case 'purple':
-        return [backgroundColorsPalette.purple[0], backgroundColorsPalette.purple[1]]
-    }
-  }
-
+export const ChangeColors = observer(() => {
   return (
     <div>
-      <div onClick={() => handleColorChange('red')} className={styles.colorBtn}></div>
-      <div onClick={() => handleColorChange('green')} className={styles.colorBtn}></div>
-      <div onClick={() => handleColorChange('blue')} className={styles.colorBtn}></div>
-      <div onClick={() => handleColorChange('purple')} className={styles.colorBtn}></div>
+      {Object.keys(BACKGROUNDCOLORSPALETTE).map(bgColor => (
+        <div
+          key={bgColor}
+          onClick={() => colorsStore.handleSetColors(bgColor)}
+          className={clsx(styles.colorBtn, {
+            [styles.activeBtn]: colorsStore.color === bgColor
+          })}
+        ></div>
+      ))}
     </div>
   )
-}
+})

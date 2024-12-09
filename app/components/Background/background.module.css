@@ -1,9 +1,71 @@
-@property --color-a {
+@property --color-gradient-bg1 {
   syntax: '<color>';
   inherits: true;
   initial-value: transparent;
 }
-@property --color-b {
+@property --color-gradient-bg2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --color-circle00 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle01 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle10 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle11 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle20 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle21 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle30 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle31 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle40 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle41 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --color-interactive0 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-interactive1 {
   syntax: '<color>';
   inherits: true;
   initial-value: transparent;
@@ -20,10 +82,10 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  --color-a: #6c00a2;
-  --color-b: #001152;
-  background: linear-gradient(40deg, var(--color-a), var(--color-b));
-  transition-property: --color-a, --color-b;
+  --color-gradient-bg1: #6c00a2;
+  --color-gradient-bg2: #001152;
+  background: linear-gradient(40deg, var(--color-gradient-bg1), var(--color-gradient-bg2));
+  transition-property: --color-gradient-bg1, --color-gradient-bg2;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
 }
@@ -40,95 +102,114 @@
 }
 
 .g1 {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(18, 113, 255, 0.8) 0, rgba(18, 113, 255, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-circle00: #1271ffcc;
+  --color-circle01: #1271ff00;
+  background: radial-gradient(circle at center, var(--color-circle00) 0, var(--color-circle01) 50%) no-repeat;
+  transition-property: --color-circle00, --color-circle01;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: 80%;
   height: 80%;
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2);
-
   transform-origin: center center;
   animation: moveVertical 30s ease infinite;
-
   opacity: 1;
 }
 
 .g2 {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(221, 74, 255, 0.8) 0, rgba(221, 74, 255, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-circle10: #dd4affcc;
+  --color-circle11: #dd4aff00;
+  background: radial-gradient(circle at center, var(--color-circle10) 0, var(--color-circle11) 50%) no-repeat;
+  transition-property: --color-circle10, --color-circle11;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: 80%;
   height: 80%;
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2);
-
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
-
   opacity: 1;
 }
 
 .g3 {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(100, 220, 255, 0.8) 0, rgba(100, 220, 255, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-circle20: #64dcffcc;
+  --color-circle21: #64dcff00;
+  background: radial-gradient(circle at center, var(--color-circle20) 0, var(--color-circle21) 50%) no-repeat;
+  transition-property: --color-circle20, --color-circle21;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: 80%;
   height: 80%;
   top: calc(50% - 80% / 2 + 200px);
   left: calc(50% - 80% / 2 - 500px);
-
   transform-origin: calc(50% + 400px);
   animation: moveInCircle 40s linear infinite;
-
   opacity: 1;
 }
 
 .g4 {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(200, 50, 50, 0.8) 0, rgba(200, 50, 50, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-circle30: #c83232cc;
+  --color-circle31: #c8323200;
+  background: radial-gradient(circle at center, var(--color-circle30) 0, var(--color-circle31) 50%) no-repeat;
+  transition-property: --color-circle30, --color-circle31;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: 80%;
   height: 80%;
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2);
-
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
-
   opacity: 0.7;
 }
 
 .g5 {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(180, 180, 50, 0.8) 0, rgba(180, 180, 50, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-circle40: #b4b431cc;
+  --color-circle41: #b4b43200;
+  background: radial-gradient(circle at center, var(--color-circle40) 0, var(--color-circle41) 50%) no-repeat;
+  transition-property: --color-circle40, --color-circle41;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: calc(80% * 2);
   height: calc(80% * 2);
   top: calc(50% - 80%);
   left: calc(50% - 80%);
-
   transform-origin: calc(50% - 800px) calc(50% + 200px);
   animation: moveInCircle 20s ease infinite;
-
   opacity: 1;
 }
 
 .interactive {
-  position: absolute;
-  background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8) 0, rgba(140, 100, 255, 0) 50%) no-repeat;
-  mix-blend-mode: hard-light;
+  --color-interactive0: rgba(140, 100, 255, 0.8);
+  --color-interactive1: rgba(140, 100, 255, 0);
+  background: radial-gradient(circle at center, var(--color-interactive0) 0, var(--color-interactive1) 50%) no-repeat;
+  transition-property: --color-interactive0, --color-interactive1;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 
+  position: absolute;
+  mix-blend-mode: hard-light;
   width: 100%;
   height: 100%;
   top: -50%;
   left: -50%;
-
   opacity: 0.7;
 }
 
