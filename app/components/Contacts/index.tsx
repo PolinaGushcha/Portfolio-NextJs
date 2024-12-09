@@ -1,26 +1,19 @@
 'use client'
 
+import { sendEmail } from '@api/sendEmail'
 import { ErrorMessage } from '@components/ErrorMessage'
-import { TECHNIQUES_OPTIONS } from '@constants/data.constants'
+import { TECHNIQUES_OPTIONS } from '@constants/data'
 import { yupResolver } from '@hookform/resolvers/yup'
 import GmailIcon from '@icons/gmail.icon.svg'
 import LocationIcon from '@icons/location.icon.svg'
 import PhoneIcon from '@icons/phone.icon.svg'
-import { sendEmail } from 'app/api/sendEmail'
-import { schema } from 'app/config/formSchema.config'
+import { schema } from '@utils/formSchema'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-export interface IContacts {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  technique: NonNullable<'html&css' | 'react' | 'nextjs' | 'reactnative' | 'ionic' | 'angular' | 'other'>
-  message: string
-}
+import { IContacts } from './types'
 
 export const Contacts = () => {
   const {
@@ -40,7 +33,6 @@ export const Contacts = () => {
     const fullname = `${data.firstName} ${data.lastName}`
     setPhoneInput('')
     sendEmail(fullname, data.email, data.phone, data.technique, data.message)
-    console.log(data)
     reset()
   }
 

@@ -1,0 +1,72 @@
+@property --color-gradient-bg1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-gradient-bg2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --color-circle00 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle01 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle10 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle11 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle20 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle21 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle30 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle31 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle40 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-circle41 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --color-interactive0 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --color-interactive1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}

@@ -1,8 +1,8 @@
-import { EDUCATION, EXPERIENCE } from 'app/constants/data.constants'
+import { EDUCATION, EXPERIENCE } from '@constants/data'
 
 export const Experience = () => {
   return (
-    <section>
+    <section id='experience'>
       <div>
         <h2>My experience</h2>
         {EXPERIENCE.map(el => {

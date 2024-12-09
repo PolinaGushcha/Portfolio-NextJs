@@ -1,16 +1,7 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { ErrorMessage } from '@components/ErrorMessage'
 
-const ErrorPage = () => {
-  const router = useRouter()
-
-  return (
-    <section>
-      <h1>Page not found</h1>
-      <button onClick={() => router.back()}>Go back</button>
-    </section>
-  )
-}
+const ErrorPage = () => <ErrorMessage />
 
 export default ErrorPage

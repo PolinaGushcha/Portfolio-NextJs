@@ -1,0 +1,33 @@
+.nav {
+  background-color: white;
+  box-shadow: 0px 16px 40px -12px rgba(66, 68, 90, 1);
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1290px;
+  padding: 20 0 15;
+}
+
+.navUl {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+}
+
+.navLi {
+  width: 100%;
+  margin: 0 25;
+}
+
+.navA {
+  color: black;
+  text-decoration: none;
+  color: gray;
+}

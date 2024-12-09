@@ -1,45 +1,21 @@
 'use client'
 
-import { BACKGROUNDCOLORSPALETTE } from '@constants/color.constants'
-import colorsStore from 'app/store/colorsStore'
+import { BACKGROUNDCOLORSPALETTE } from '@constants/types/color'
+import colorsStore from '@store/colorsStore'
+import { mouseController } from '@utils/mouseController'
+import { clsx } from 'clsx'
 import { observer } from 'mobx-react-lite'
 import { useEffect, useRef } from 'react'
 
 import styles from './background.module.css'
-
-export interface IBackground {
-  children: React.ReactNode
-}
+import { IBackground } from './types'
 
 const Background: React.FC<IBackground> = observer(({ children }) => {
   const gradientBgRef = useRef<HTMLDivElement>(null)
   const interactiveRef = useRef<HTMLDivElement>(null)
   const circleRefs = Array.from({ length: 5 }, () => useRef<HTMLDivElement>(null))
 
-  useEffect(() => {
-    const interBubble = document.getElementById('interactive') as HTMLElement
-    let curX = 0
-    let curY = 0
-    let tgX = 0
-    let tgY = 0
-    function move() {
-      curX += (tgX - curX) / 20
-      curY += (tgY - curY) / 20
-      if (interBubble) {
-        interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`
-        requestAnimationFrame(() => {
-          move()
-        })
-      }
-    }
-    window.addEventListener('mousemove', event => {
-      tgX = event.clientX
-      tgY = event.clientY
-    })
-    move()
-  }, [])
-
-  useEffect(() => {
+  const handleChangeBgColors = () => {
     if (gradientBgRef?.current && circleRefs && interactiveRef?.current) {
       const groupedColors = Array.from({ length: circleRefs.length }, (_, i) => [
         BACKGROUNDCOLORSPALETTE[colorsStore.color][2][i * 2],
@@ -48,14 +24,19 @@ const Background: React.FC<IBackground> = observer(({ children }) => {
 
       gradientBgRef.current.style.setProperty('--color-gradient-bg1', BACKGROUNDCOLORSPALETTE[colorsStore.color][0])
       gradientBgRef.current.style.setProperty('--color-gradient-bg2', BACKGROUNDCOLORSPALETTE[colorsStore.color][1])
+
       interactiveRef.current.style.setProperty('--color-interactive0', BACKGROUNDCOLORSPALETTE[colorsStore.color][3])
       interactiveRef.current.style.setProperty('--color-interactive1', BACKGROUNDCOLORSPALETTE[colorsStore.color][4])
+
       circleRefs.forEach((el, id) => {
         el.current?.style.setProperty(`--color-circle${id}0`, groupedColors[id][0])
         el.current?.style.setProperty(`--color-circle${id}1`, groupedColors[id][1])
       })
     }
-  }, [colorsStore.color])
+  }
+
+  useEffect(mouseController, [])
+  useEffect(handleChangeBgColors, [colorsStore.color])
 
   return (
     <>
@@ -71,12 +52,12 @@ const Background: React.FC<IBackground> = observer(({ children }) => {
           </defs>
         </svg>
         <div className={styles.gradientsContainer}>
-          <div ref={circleRefs[0]} className={styles.g1}></div>
-          <div ref={circleRefs[1]} className={styles.g2}></div>
-          <div ref={circleRefs[2]} className={styles.g3}></div>
-          <div ref={circleRefs[3]} className={styles.g4}></div>
-          <div ref={circleRefs[4]} className={styles.g5}></div>
-          <div id='interactive' ref={interactiveRef} className={styles.interactive}></div>
+          <div ref={circleRefs[0]} className={clsx(styles.circle, styles.g1)}></div>
+          <div ref={circleRefs[1]} className={clsx(styles.circle, styles.g2)}></div>
+          <div ref={circleRefs[2]} className={clsx(styles.circle, styles.g3)}></div>
+          <div ref={circleRefs[3]} className={clsx(styles.circle, styles.g4)}></div>
+          <div ref={circleRefs[4]} className={clsx(styles.circle, styles.g5)}></div>
+          <div id='interactive' ref={interactiveRef} className={clsx(styles.circle, styles.interactive)}></div>
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
+import { publicKeyId, serviceId, templateId } from '@config/email'
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
-import { publicKeyId, serviceId, templateId } from 'app/config/email.config'
 
 export const sendEmail = (fullname: string, email: string, phone: string, technique: string, message: string) => {
   const templateParams = {

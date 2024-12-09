@@ -1,3 +1,11 @@
+import styles from './greeting.module.css'
+
 export const Greeting = () => {
-  return <h2>Greeting</h2>
+  return (
+    <section className={styles.container}>
+      <div>
+        <h2>Hello</h2>
+      </div>
+    </section>
+  )
 }

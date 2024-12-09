@@ -1,4 +1,5 @@
-import { BACKGROUNDCOLORSPALETTE, IBackgroundColorsPalette } from '@constants/color.constants'
+import { IBackgroundColorsPalette } from '@constants/colors.types'
+import { BACKGROUNDCOLORSPALETTE } from '@constants/types/color'
 import { makeAutoObservable } from 'mobx'
 
 class ColorsStore {

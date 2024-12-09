@@ -1,10 +1,6 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
-interface IButtom {
-  icon?: ReactNode
-  text?: string
-  click: () => void
-}
+import { IButtom } from './types'
 
 export const Button: React.FC<IButtom> = ({ icon, text, click }) => {
   return (

@@ -1,9 +1,4 @@
-export interface IBackgroundColorsPalette {
-  red: [string, string, string[], string, string]
-  green: [string, string, string[], string, string]
-  blue: [string, string, string[], string, string]
-  purple: [string, string, string[], string, string]
-}
+import { IBackgroundColorsPalette } from '../colors.types'
 
 export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
   red: [
@@ -43,8 +38,8 @@ export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
     'rgba(197, 255, 0, 0)'
   ],
   blue: [
-    '#2222DD',
     '#C8F8FF',
+    '#2222DD',
     [
       'rgba(15, 1, 103, 0.8)',
       'rgba(15, 1, 103, 0)',

@@ -1,8 +1,10 @@
+import { IEducation, IExperience, ITechniquesOptions } from './types/data.types'
+
 export const TITLE_TECHNICS = ['React', 'Next.js', 'React Native', 'Ionic', 'Angular', 'JavaScript']
 
-export const EXPERIENCE = [
+export const EXPERIENCE: IExperience[] = [
   {
-    id: '1',
+    id: 1,
     name: 'GSU-AI',
     duration: 'June 2024 – present',
     description: [
@@ -16,7 +18,7 @@ export const EXPERIENCE = [
     team: ['PM', 'GD']
   },
   {
-    id: '2',
+    id: 2,
     name: 'Milestep',
     duration: 'February 2024 – June 2024',
     description: [
@@ -28,7 +30,7 @@ export const EXPERIENCE = [
     team: ['PM', 'GD']
   },
   {
-    id: '3',
+    id: 3,
     name: 'Taqtile',
     duration: 'September 2023 – April 2024',
     description: ['description'],
@@ -37,34 +39,34 @@ export const EXPERIENCE = [
   }
 ]
 
-export const EDUCATION = [
+export const EDUCATION: IEducation[] = [
   {
-    id: '1',
+    id: 1,
     name: 'Angular the rolling scope school course',
     description: 'description',
     date: 'date'
   },
   {
-    id: '2',
+    id: 2,
     name: 'JavaScript and React course',
     description: 'description',
     date: 'date'
   },
   {
-    id: '3',
+    id: 3,
     name: 'Website development with HTML, CSS & JS',
     description: 'description',
     date: 'date'
   },
   {
-    id: '4',
+    id: 4,
     name: 'BSU',
     description: 'description',
     date: 'date'
   }
 ]
 
-export const TECHNIQUES_OPTIONS = [
+export const TECHNIQUES_OPTIONS: ITechniquesOptions[] = [
   { id: 1, value: 'html&css', name: 'HTML & CSS website layout' },
   { id: 2, value: 'react', name: 'React' },
   { id: 3, value: 'nextjs', name: 'Next.js' },

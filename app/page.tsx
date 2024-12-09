@@ -1,11 +1,11 @@
 'use client'
 
-import Background from '@components/Background'
 import { Greeting } from '@components/Greeting'
 import { Loading } from '@components/Loading'
+import { handleScroll } from '@utils/activeLinkOnScroll'
 import { useEffect, useState } from 'react'
 
-import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
+import { Contacts, Experience, Footer, Home, Navigation, Skills, Works } from './components'
 
 export default function Main() {
   const [isLoading, setIsLoading] = useState<boolean | undefined>(undefined)
@@ -18,31 +18,29 @@ export default function Main() {
         setIsLoading(false)
       }, 3000)
     }
+    // document.addEventListener('loadstart', handleScroll)
+    document.addEventListener('scroll', handleScroll)
   }, [])
 
   if (isLoading === undefined) {
     return <></>
   }
   if (isLoading) {
-    return (
-      <Background>
-        <Loading />
-      </Background>
-    )
+    return <Loading />
   } else {
     return (
-      <Background>
+      <>
         <Navigation />
         <main>
           <Greeting />
           <Home />
           <Experience />
           <Skills />
-          <Work />
+          <Works />
           <Contacts />
         </main>
         <Footer />
-      </Background>
+      </>
     )
   }
 }

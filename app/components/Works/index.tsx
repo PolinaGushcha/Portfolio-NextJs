@@ -1,6 +1,6 @@
-import { TITLE_TECHNICS } from 'app/constants/data.constants'
+import { TITLE_TECHNICS } from '@constants/data'
 
-export const Work = () => {
+export const Works = () => {
   return (
     <section id='works'>
       <h2>Works</h2>

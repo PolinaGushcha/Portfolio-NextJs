@@ -1,7 +1,29 @@
+:root {
+  --white: #fff;
+  --color-gradient-bg1: #6c00a2;
+  --color-gradient-bg2: #001152;
+  --color-circle00: #1271ffcc;
+  --color-circle01: #1271ff00;
+  --color-circle10: #dd4affcc;
+  --color-circle11: #dd4aff00;
+  --color-circle20: #64dcffcc;
+  --color-circle21: #64dcff00;
+  --color-circle30: #c83232cc;
+  --color-circle31: #c8323200;
+  --color-circle40: #b4b431cc;
+  --color-circle41: #b4b43200;
+  --color-interactive0: #8c64ffcc;
+  --color-interactive1: #8c64ff00;
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
