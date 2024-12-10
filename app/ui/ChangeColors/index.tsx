@@ -1,7 +1,7 @@
 'use client'
 
-import { IBackgroundColorsPalette } from '@constants/colors.types'
-import { BACKGROUNDCOLORSPALETTE } from '@constants/types/color'
+import { BACKGROUNDCOLORSPALETTE } from '@constants/color'
+import { IBackgroundColorsPalette } from '@constants/types/colors.types'
 import colorsStore from '@store/colorsStore'
 import clsx from 'clsx'
 import { observer } from 'mobx-react-lite'

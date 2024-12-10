@@ -18,7 +18,6 @@ export default function Main() {
         setIsLoading(false)
       }, 3000)
     }
-    // document.addEventListener('loadstart', handleScroll)
     document.addEventListener('scroll', handleScroll)
   }, [])
 

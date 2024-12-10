@@ -1,4 +1,4 @@
-import { IBackgroundColorsPalette } from '../colors.types'
+import { IBackgroundColorsPalette } from './types/colors.types'
 
 export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
   red: [

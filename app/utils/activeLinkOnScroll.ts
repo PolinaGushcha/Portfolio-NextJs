@@ -1,6 +1,3 @@
-import { BACKGROUNDCOLORSPALETTE } from '@constants/types/color'
-import colorsStore from '@store/colorsStore'
-
 export const handleScroll = () => {
   const components = [
     document.getElementById('home'),

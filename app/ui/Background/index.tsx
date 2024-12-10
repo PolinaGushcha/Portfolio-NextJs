@@ -1,6 +1,6 @@
 'use client'
 
-import { BACKGROUNDCOLORSPALETTE } from '@constants/types/color'
+import { BACKGROUNDCOLORSPALETTE } from '@constants/color'
 import colorsStore from '@store/colorsStore'
 import { mouseController } from '@utils/mouseController'
 import { clsx } from 'clsx'
