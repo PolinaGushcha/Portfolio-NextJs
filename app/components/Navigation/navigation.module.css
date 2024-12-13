@@ -14,6 +14,10 @@
   padding: 20 0 15;
 }
 
+.hamburgerMenu {
+  display: none;
+}
+
 .navUl {
   display: flex;
   flex-direction: row;
@@ -33,4 +37,45 @@
 
 .navA:hover {
   color: black !important;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 20 20 15;
+  }
+
+  .hamburgerMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0;
+  }
+
+  .changeColors {
+    margin: 0 0;
+  }
+
+  .navUl {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 71px;
+    left: 0;
+    background-color: white;
+    flex-direction: column;
+    height: 0px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLi {
+    width: max-content;
+    margin-top: 20;
+  }
+  .navLi:last-child {
+    padding-bottom: 30px;
+  }
+
+  .changeColorsOpened {
+    height: 275px;
+  }
 }

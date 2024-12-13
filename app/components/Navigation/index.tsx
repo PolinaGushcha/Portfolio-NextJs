@@ -1,15 +1,28 @@
+'use client'
+
+import { BurgerMenu } from '@ui/BurgerMenu'
 import { ChangeColors } from '@ui/ChangeColors'
+import clsx from 'clsx'
+import { useState } from 'react'
 
 import styles from './navigation.module.css'
 
 export const Navigation: React.FC = () => {
+  const [isOpened, setIsOpened] = useState<boolean>(false)
+  const handleOpen = () => {
+    setIsOpened(!isOpened)
+  }
+
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <div>
+        <div className={styles.changeColors}>
           <ChangeColors />
         </div>
-        <ul className={styles.navUl}>
+        <div className={styles.hamburgerMenu}>
+          <BurgerMenu handleOpen={handleOpen} />
+        </div>
+        <ul className={clsx(styles.navUl, isOpened && styles.changeColorsOpened)}>
           <li className={styles.navLi}>
             <a className={`navItem ${styles.navA}`} href='#home'>
               Home
