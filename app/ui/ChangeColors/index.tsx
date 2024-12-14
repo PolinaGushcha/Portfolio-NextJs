@@ -14,8 +14,8 @@ export const ChangeColors = observer(() => {
   const dropdownRef = useRef<HTMLDivElement>(null)
   const dropdownListRef = useRef<HTMLDivElement>(null)
 
-  const handleClickOutside = (event: any) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setOpenColorList(false)
     }
   }
