@@ -1,0 +1,118 @@
+.children {
+  z-index: 3;
+  position: relative;
+}
+
+.backgroundFolders {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
+.homeBg1 {
+  width: var(--width-bg1);
+  height: var(--height-bg1);
+  position: absolute;
+}
+.homeBg2 {
+  width: var(--width-bg2);
+  height: var(--height-bg2);
+  position: absolute;
+}
+.homeBg3 {
+  width: var(--width-bg3);
+  height: var(--height-bg3);
+  position: absolute;
+  right: 10.4vw;
+  opacity: 0.6;
+}
+.homeBg4 {
+  width: var(--width-bg4);
+  height: var(--height-bg4);
+  position: absolute;
+  bottom: 3vw;
+}
+.homeBg5 {
+  width: var(--width-bg5);
+  height: var(--height-bg5);
+  position: absolute;
+  bottom: -8vw;
+}
+.homeBg6 {
+  width: var(--width-bg6);
+  height: var(--height-bg6);
+  position: absolute;
+  bottom: 0;
+  left: 21vw;
+}
+.homeBg7 {
+  width: var(--width-bg7);
+  height: var(--height-bg7);
+  position: absolute;
+  bottom: 0;
+  right: 23vw;
+  opacity: 0.5;
+}
+.homeBg8 {
+  width: var(--width-bg8);
+  height: var(--height-bg8);
+  position: absolute;
+  right: 0;
+}
+.homeBg9 {
+  width: var(--width-bg9);
+  height: var(--height-bg9);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .homeBg1 {
+    width: calc(var(--width-bg1) * var(--percent));
+    height: calc(var(--height-bg1) * var(--percent));
+  }
+  .homeBg2 {
+    width: calc(var(--width-bg2) * var(--percent));
+    height: calc(var(--height-bg2) * var(--percent));
+  }
+  .homeBg3 {
+    width: calc(var(--width-bg3) * var(--percent) * 0.8);
+    height: calc(var(--height-bg3) * var(--percent) * 0.8);
+    right: 5vw;
+  }
+  .homeBg4 {
+    width: calc(var(--width-bg4) * var(--percent));
+    height: calc(var(--height-bg4) * var(--percent));
+  }
+  .homeBg5 {
+    width: calc(var(--width-bg5) * var(--percent));
+    height: calc(var(--height-bg5) * var(--percent));
+  }
+  .homeBg6 {
+    width: calc(var(--width-bg6) * var(--percent));
+    height: calc(var(--height-bg6) * var(--percent));
+  }
+  .homeBg7 {
+    width: calc(var(--width-bg7) * var(--percent) * 0.8);
+    height: calc(var(--height-bg7) * var(--percent) * 0.8);
+    right: 20vw;
+  }
+  .homeBg8 {
+    width: calc(var(--width-bg8) * var(--percent));
+    height: calc(var(--height-bg8) * var(--percent));
+  }
+  .homeBg9 {
+    width: calc(var(--width-bg9) * var(--percent));
+    height: calc(var(--height-bg9) * var(--percent));
+  }
+}

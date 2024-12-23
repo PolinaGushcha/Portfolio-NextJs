@@ -6,7 +6,9 @@
 }
 
 .svgContainer {
-  width: 300px;
+  max-width: 330px;
+  width: 100%;
+  padding: 0 15px;
   height: 93px;
 }
 
@@ -43,5 +45,14 @@
   }
   to {
     fill: rgba(255, 255, 255, 1);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .svgContainer {
+    max-width: 230px;
+    width: 100%;
+    padding: 0 15px;
+    height: auto;
   }
 }

@@ -1,9 +1,30 @@
+'use client'
+
+import gsap from 'gsap'
+import { useLayoutEffect, useRef } from 'react'
+
 import styles from './greeting.module.css'
 
 export const Greeting = () => {
+  const helloWorldRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const greetingSection = document.querySelector('#greeting') as HTMLElement
+
+    gsap.to(helloWorldRef.current, {
+      scrollTrigger: {
+        trigger: greetingSection,
+        scrub: true,
+        start: 'top top',
+        end: greetingSection.offsetHeight * 0.35
+      },
+      opacity: 0
+    })
+  }, [])
+
   return (
-    <section className={styles.container}>
-      <div className={styles.svgContainer}>
+    <section id='greeting' className={styles.container}>
+      <div ref={helloWorldRef} className={styles.svgContainer}>
         <svg className={styles.svg} viewBox='0 0 909 280' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
             className={styles.path}

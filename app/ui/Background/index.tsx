@@ -56,7 +56,6 @@ const Background: React.FC<IBackground> = observer(({ children }) => {
           <div ref={circleRefs[1]} className={clsx(styles.circle, styles.g2)}></div>
           <div ref={circleRefs[2]} className={clsx(styles.circle, styles.g3)}></div>
           <div ref={circleRefs[3]} className={clsx(styles.circle, styles.g4)}></div>
-          <div ref={circleRefs[4]} className={clsx(styles.circle, styles.g5)}></div>
           <div id='interactive' ref={interactiveRef} className={clsx(styles.circle, styles.interactive)}></div>
         </div>
       </div>

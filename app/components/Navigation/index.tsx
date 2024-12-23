@@ -3,24 +3,36 @@
 import { BurgerMenu } from '@ui/BurgerMenu'
 import { ChangeColors } from '@ui/ChangeColors'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import styles from './navigation.module.css'
 
 export const Navigation: React.FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false)
+  const ref = useRef<HTMLElement>(null)
+
   const handleOpen = () => {
     setIsOpened(!isOpened)
   }
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      setIsOpened(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside)
+  }, [])
+
   return (
-    <nav className={styles.nav}>
+    <nav ref={ref} className={styles.nav}>
       <div className={styles.container}>
         <div className={styles.changeColors}>
           <ChangeColors />
         </div>
         <div className={styles.hamburgerMenu}>
-          <BurgerMenu handleOpen={handleOpen} />
+          <BurgerMenu isOpened={isOpened} handleOpen={handleOpen} />
         </div>
         <ul className={clsx(styles.navUl, isOpened && styles.changeColorsOpened)}>
           <li className={styles.navLi}>

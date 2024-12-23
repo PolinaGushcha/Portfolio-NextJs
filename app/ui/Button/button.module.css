@@ -1,0 +1,30 @@
+.buttonContainer {
+  background-color: white;
+  width: max-content;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonContainer:hover {
+  box-shadow: 0 8px 20px -12px #000;
+}
+
+.text {
+  margin-right: 15px;
+  margin: 5px 15px 5px 0px;
+}
+
+.buttonContainer:has(.text) {
+  padding: 10px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 14px;
+  }
+}

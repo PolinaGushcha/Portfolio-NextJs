@@ -30,6 +30,7 @@
       "@ui/*": ["app/ui/*"],
       "@utils/*": ["app/utils/*"],
       "@icons/*": ["public/icons/*"],
+      "@backgroundFolders/*": ["public/backgroundFolders/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

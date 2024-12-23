@@ -1,9 +1,11 @@
 import { EDUCATION, EXPERIENCE } from '@constants/data'
 
+import styles from './experience.module.css'
+
 export const Experience = () => {
   return (
-    <section id='experience'>
-      <div>
+    <section className={styles.experience} id='experience'>
+      <div className={styles.container}>
         <h2>My experience</h2>
         {EXPERIENCE.map(el => {
           return (

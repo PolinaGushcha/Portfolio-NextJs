@@ -36,10 +36,6 @@
   overflow: hidden;
 }
 
-.svg {
-  display: none;
-}
-
 .g1 {
   background: radial-gradient(circle at center, var(--color-circle00) 0, var(--color-circle01) 50%) no-repeat;
   transition-property: --color-circle00, --color-circle01;
@@ -69,17 +65,6 @@
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
-}
-
-.g5 {
-  background: radial-gradient(circle at center, var(--color-circle40) 0, var(--color-circle41) 50%) no-repeat;
-  transition-property: --color-circle40, --color-circle41;
-  width: calc(80% * 2);
-  height: calc(80% * 2);
-  top: calc(50% - 80%);
-  left: calc(50% - 80%);
-  transform-origin: calc(50% - 800px) calc(50% + 200px);
-  animation: moveInCircle 20s ease infinite;
 }
 
 .interactive {
