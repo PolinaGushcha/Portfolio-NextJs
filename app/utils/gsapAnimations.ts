@@ -1,9 +1,8 @@
 import gsap from 'gsap'
-import { MutableRefObject } from 'react'
 
 interface GsapAnimationParams {
   refElement: HTMLImageElement | null
-  refContainer: MutableRefObject<HTMLDivElement | null>
+  refContainer: HTMLDivElement | null
   containerEnd: number
   styles: Record<string, string | number>
 }
@@ -11,7 +10,7 @@ interface GsapAnimationParams {
 export const gsapAnimation = ({ refElement, refContainer, containerEnd, styles }: GsapAnimationParams) => {
   gsap.to(refElement, {
     scrollTrigger: {
-      trigger: refContainer.current,
+      trigger: refContainer,
       scrub: true,
       markers: true,
       start: 'top top',

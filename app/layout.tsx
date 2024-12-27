@@ -1,9 +1,9 @@
+import SmoothScroll from '@components/SmoothScroll'
 import Background from '@ui/Background'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
 import './globals.scss'
-import { Providers } from './providers'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,9 +25,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={poppins.className}>
-        <Providers>
-          <Background>{children}</Background>
-        </Providers>
+        <Background />
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   )

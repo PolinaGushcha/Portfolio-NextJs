@@ -5,9 +5,9 @@ import LinkedIn from '@icons/linkedin.icon.svg'
 import Telegram from '@icons/telegram.icon.svg'
 import { Button } from '@ui/Button/'
 
-import styles from './home.module.css'
+import styles from './greetingTitle.module.css'
 
-export const Home = () => {
+export const GreetingTitle = () => {
   const downloadFile = () => {
     console.log('downloadFile')
   }
@@ -21,7 +21,7 @@ export const Home = () => {
   }
 
   return (
-    <section id='home'>
+    <section id='greeting'>
       <div className={styles.container}>
         <h1 className={styles.title}>
           I am a frontend developer
@@ -33,7 +33,7 @@ export const Home = () => {
           interfaces and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and transportation.
         </p>
         <div className={styles.mainLinks}>
-          <Button icon={<DownloadIcon />} text={'Download'} click={downloadFile} />
+          <Button icon={<DownloadIcon />} text={'Download CV'} click={downloadFile} />
           <ul className={styles.ul}>
             <li className={styles.li}>
               <Button icon={<LinkedIn />} click={openPage} />

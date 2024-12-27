@@ -8,9 +8,8 @@ import { observer } from 'mobx-react-lite'
 import { useEffect, useRef } from 'react'
 
 import styles from './background.module.css'
-import { IBackground } from './types'
 
-const Background: React.FC<IBackground> = observer(({ children }) => {
+const Background: React.FC = observer(() => {
   const gradientBgRef = useRef<HTMLDivElement>(null)
   const interactiveRef = useRef<HTMLDivElement>(null)
   const circleRefs = Array.from({ length: 5 }, () => useRef<HTMLDivElement>(null))
@@ -39,27 +38,24 @@ const Background: React.FC<IBackground> = observer(({ children }) => {
   useEffect(handleChangeBgColors, [colorsStore.color])
 
   return (
-    <>
-      <div className={styles.childrenContainer}>{children}</div>
-      <div ref={gradientBgRef} className={styles.gradientBg}>
-        <svg className={styles.svg}>
-          <defs>
-            <filter id='goo'>
-              <feGaussianBlur in='SourceGraphic' stdDeviation='10' result='blur' />
-              <feColorMatrix in='blur' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8' result='goo' />
-              <feBlend in='SourceGraphic' in2='goo' />
-            </filter>
-          </defs>
-        </svg>
-        <div className={styles.gradientsContainer}>
-          <div ref={circleRefs[0]} className={clsx(styles.circle, styles.g1)}></div>
-          <div ref={circleRefs[1]} className={clsx(styles.circle, styles.g2)}></div>
-          <div ref={circleRefs[2]} className={clsx(styles.circle, styles.g3)}></div>
-          <div ref={circleRefs[3]} className={clsx(styles.circle, styles.g4)}></div>
-          <div id='interactive' ref={interactiveRef} className={clsx(styles.circle, styles.interactive)}></div>
-        </div>
+    <div ref={gradientBgRef} className={styles.gradientBg}>
+      <svg className={styles.svg}>
+        <defs>
+          <filter id='goo'>
+            <feGaussianBlur in='SourceGraphic' stdDeviation='10' result='blur' />
+            <feColorMatrix in='blur' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8' result='goo' />
+            <feBlend in='SourceGraphic' in2='goo' />
+          </filter>
+        </defs>
+      </svg>
+      <div className={styles.gradientsContainer}>
+        <div ref={circleRefs[0]} className={clsx(styles.circle, styles.g1)}></div>
+        <div ref={circleRefs[1]} className={clsx(styles.circle, styles.g2)}></div>
+        <div ref={circleRefs[2]} className={clsx(styles.circle, styles.g3)}></div>
+        <div ref={circleRefs[3]} className={clsx(styles.circle, styles.g4)}></div>
+        <div id='interactive' ref={interactiveRef} className={clsx(styles.circle, styles.interactive)}></div>
       </div>
-    </>
+    </div>
   )
 })
 
