@@ -1,11 +1,146 @@
 .experience {
-  position: relative;
+  padding: 100px 0;
+  background-color: #212529;
+  min-height: 80vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 40px 40px -10px #0000003f;
 }
 
 .container {
-  /* background-color: #131515;
-    background-color: #000814;
-    background-color: #020202; */
-  background-color: #212529;
-  /* background-color: #001219; */
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  max-width: 1290px;
+  width: 100%;
+  padding: 0px 30px 0px 15px;
+}
+
+.article {
+  width: 50%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.title > svg {
+  width: 60px;
+  height: 60px;
+  margin: 0 0;
+}
+
+.titleText {
+  margin: 0 0;
+  font-size: 45px;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, #8750f7 0%, #ffffff 100%);
+  width: fit-content;
+}
+
+.cardList {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background: rgba(135, 80, 247, 0.2);
+  color: white;
+  border-radius: 15px;
+  width: 100%;
+  padding: 20px 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(136, 80, 247, 0.2) 0%, rgba(136, 80, 247, 1) 100%);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardTime {
+  color: #8750f7;
+  font-weight: bold;
+  position: relative;
+}
+
+.cardText {
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 25px;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .titleText {
+    font-size: 36px;
+  }
+  .cardTitle {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .experience {
+    padding: 100px 0px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .article {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .experience {
+    padding: 0px 0px;
+  }
+  .container {
+    padding: 10px 20px 40px;
+  }
+  .article {
+    margin-top: 60px;
+    width: 100%;
+  }
+  .title > svg {
+    width: 40px;
+    height: 40px;
+  }
+  .titleText {
+    font-size: 24px;
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+  .cardTime {
+    font-size: 12px;
+  }
+  .cardText {
+    font-size: 14px;
+  }
 }

@@ -12,12 +12,23 @@ export const gsapAnimation = ({ refElement, refContainer, containerEnd, styles }
     scrollTrigger: {
       trigger: refContainer,
       scrub: true,
-      markers: true,
       start: 'top top',
       end: containerEnd
     },
     ease: 'none',
     ...styles
+  })
+
+  gsap.to(refElement, {
+    scrollTrigger: {
+      trigger: document.getElementById('experience'),
+      start: 'top top',
+      scrub: true,
+      end: containerEnd,
+      markers: true
+    },
+    ease: 'none',
+    display: 'none'
   })
 }
 

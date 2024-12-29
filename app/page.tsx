@@ -35,8 +35,6 @@ export default function Main() {
         <main className={styles.main}>
           <Greeting />
           <Experience />
-          <Experience />
-          <Experience />
         </main>
       </>
     )
