@@ -12,6 +12,25 @@ const SmoothScroll: React.FC<ISmoothScroll> = ({ children }) => {
 
   useEffect(() => {
     lenis?.scrollTo(0, { immediate: true })
+
+    const handleAnchorClick = (event: MouseEvent) => {
+      const target = event.target as HTMLAnchorElement
+
+      if (target.tagName === 'A' && target.hash) {
+        event.preventDefault()
+        const targetElement = document.querySelector(target.hash) as HTMLElement
+
+        if (targetElement) {
+          lenis?.scrollTo(targetElement)
+        }
+      }
+    }
+
+    document.addEventListener('click', handleAnchorClick)
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick)
+    }
   }, [lenis])
 
   return (

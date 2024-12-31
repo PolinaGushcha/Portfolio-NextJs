@@ -24,8 +24,7 @@ export const gsapAnimation = ({ refElement, refContainer, containerEnd, styles }
       trigger: document.getElementById('experience'),
       start: 'top top',
       scrub: true,
-      end: containerEnd,
-      markers: true
+      end: containerEnd
     },
     ease: 'none',
     display: 'none'

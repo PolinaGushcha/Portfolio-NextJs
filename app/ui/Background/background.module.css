@@ -1,4 +1,4 @@
-@import './background-properties.module.css';
+@import '../../colors-properties.module.css';
 
 .circle {
   transition-duration: 1s;

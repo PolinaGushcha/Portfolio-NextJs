@@ -25,8 +25,16 @@ export const GreetingTitle = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>
           I am a frontend developer
-          <br />
-          on <span className={styles.technics}>{TITLE_TECHNICS[0]}</span>
+          <div className={styles.technicsContainer}>
+            <div>on</div>
+            <div className={styles.technics}>
+              {TITLE_TECHNICS.map((el, id) => (
+                <span key={id} className={styles.technicName}>
+                  {el}
+                </span>
+              ))}
+            </div>
+          </div>
         </h1>
         <p className={styles.text}>
           Junior Frontend developer on mobile and web applications with 1.5 years of experience. I develop both beautiful smooth animation of

@@ -1,13 +1,13 @@
 export const handleScroll = () => {
   const components = [
-    document.getElementById('home'),
+    document.getElementById('greeting'),
     document.getElementById('experience'),
     document.getElementById('skills'),
     document.getElementById('works'),
     document.getElementById('contacts')
   ]
   const navItems = [...(document.querySelectorAll('.navItem') as NodeListOf<HTMLAnchorElement>)]
-  let currentSection = 'home'
+  let currentSection = 'greeting'
 
   components.forEach(section => {
     if (section?.offsetTop) {

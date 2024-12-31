@@ -3,6 +3,7 @@
 import { Experience } from '@components/Experience'
 import { Greeting } from '@components/Greeting'
 import { Loading } from '@components/Loading'
+import { Navigation } from '@components/Navigation'
 import { Folders } from '@ui/Folders'
 import { handleScroll } from '@utils/activeLinkOnScroll'
 import { useEffect, useState } from 'react'
@@ -32,6 +33,7 @@ export default function Main() {
     return (
       <>
         <Folders />
+        <Navigation />
         <main className={styles.main}>
           <Greeting />
           <Experience />

@@ -38,8 +38,8 @@ export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
     'rgba(197, 255, 0, 0)'
   ],
   blue: [
-    '#C8F8FF',
     '#2222DD',
+    '#C8F8FF',
     [
       'rgba(15, 1, 103, 0.8)',
       'rgba(15, 1, 103, 0)',

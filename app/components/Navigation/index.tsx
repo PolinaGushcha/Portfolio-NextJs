@@ -16,7 +16,7 @@ export const Navigation: React.FC = () => {
   }
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (ref.current && !ref.current.contains(event.target as Node)) {
+    if (ref.current && (!ref.current.contains(event.target as Node) || event.target instanceof HTMLAnchorElement)) {
       setIsOpened(false)
     }
   }
@@ -36,7 +36,7 @@ export const Navigation: React.FC = () => {
         </div>
         <ul className={clsx(styles.navUl, isOpened && styles.changeColorsOpened)}>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#home'>
+            <a className={`navItem ${styles.navA}`} href='#greeting'>
               Home
             </a>
           </li>

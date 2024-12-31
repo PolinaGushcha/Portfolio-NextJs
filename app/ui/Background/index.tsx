@@ -21,11 +21,11 @@ const Background: React.FC = observer(() => {
         BACKGROUNDCOLORSPALETTE[colorsStore.color][2][i * 2 + 1]
       ])
 
-      gradientBgRef.current.style.setProperty('--color-gradient-bg1', BACKGROUNDCOLORSPALETTE[colorsStore.color][0])
-      gradientBgRef.current.style.setProperty('--color-gradient-bg2', BACKGROUNDCOLORSPALETTE[colorsStore.color][1])
+      document.documentElement.style.setProperty('--color-gradient-bg1', BACKGROUNDCOLORSPALETTE[colorsStore.color][0])
+      document.documentElement.style.setProperty('--color-gradient-bg2', BACKGROUNDCOLORSPALETTE[colorsStore.color][1])
 
-      interactiveRef.current.style.setProperty('--color-interactive0', BACKGROUNDCOLORSPALETTE[colorsStore.color][3])
-      interactiveRef.current.style.setProperty('--color-interactive1', BACKGROUNDCOLORSPALETTE[colorsStore.color][4])
+      document.documentElement.style.setProperty('--color-interactive0', BACKGROUNDCOLORSPALETTE[colorsStore.color][3])
+      document.documentElement.style.setProperty('--color-interactive1', BACKGROUNDCOLORSPALETTE[colorsStore.color][4])
 
       circleRefs.forEach((el, id) => {
         el.current?.style.setProperty(`--color-circle${id}0`, groupedColors[id][0])

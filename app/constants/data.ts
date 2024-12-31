@@ -1,6 +1,6 @@
 import { IEducation, IExperience, ITechniquesOptions } from './types/data.types'
 
-export const TITLE_TECHNICS = ['React', 'Next.js', 'React Native', 'Ionic', 'Angular', 'JavaScript']
+export const TITLE_TECHNICS = ['React', 'React Native', 'Next.js', 'Angular', 'React']
 
 export const EXPERIENCE: IExperience[] = [
   {
