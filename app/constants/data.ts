@@ -75,3 +75,20 @@ export const TECHNIQUES_OPTIONS: ITechniquesOptions[] = [
   { id: 6, value: 'angular', name: 'Angular' },
   { id: 7, value: 'other', name: 'Other' }
 ]
+
+export const SKILLS = [
+  'HTML, CSS',
+  'SCSS & SASS',
+  'Tailwind',
+  'JavaScript',
+  'React',
+  'Redux',
+  'MobX',
+  'React Admin',
+  'Next.js',
+  'Framer Motion',
+  'Gsap',
+  'React Native',
+  'Ionic',
+  'Angular'
+]

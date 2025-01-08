@@ -1,4 +1,4 @@
-export const handleScroll = () => {
+export const handleActiveLinkOnScroll = () => {
   const components = [
     document.getElementById('greeting'),
     document.getElementById('experience'),

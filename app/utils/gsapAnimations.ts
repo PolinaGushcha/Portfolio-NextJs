@@ -53,3 +53,10 @@ export const handleAddFolderStyles = (el: HTMLImageElement | null, id: number) =
     return { x: 0, y: 0 }
   }
 }
+
+export const loadingTransparent = (container: HTMLElement, fromOpacity: number, toOpacity: number) => {
+  if (container) {
+    gsap.fromTo(container, { opacity: fromOpacity }, { opacity: toOpacity, duration: 1.3 })
+    gsap.to(container, { display: 'none', delay: 1.3 })
+  }
+}

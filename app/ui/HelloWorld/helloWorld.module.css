@@ -24,6 +24,8 @@
   stroke-width: 2;
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
+}
+.pathAnimation {
   animation:
     draw 2s ease-in-out forwards,
     fillColor 1s ease-in-out forwards 2s;
