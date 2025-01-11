@@ -6,10 +6,12 @@ import { Greeting } from '@components/Greeting'
 import { Loading } from '@components/Loading'
 import { Navigation } from '@components/Navigation'
 import { Skills } from '@components/Skills'
+import SmoothScroll from '@components/SmoothScroll'
 import { Works } from '@components/Works'
+import Background from '@ui/Background'
 import { Folders } from '@ui/Folders'
 import { handleActiveLinkOnScroll } from '@utils/activeLinkOnScroll'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import styles from './page.module.css'
 
@@ -19,9 +21,10 @@ export default function Main() {
   }, [])
 
   return (
-    <div>
+    <>
+      <Background />
       <Loading />
-      <div>
+      <SmoothScroll>
         <Folders />
         <Navigation />
         <main className={styles.main}>
@@ -31,7 +34,7 @@ export default function Main() {
           <Works />
           <Contacts />
         </main>
-      </div>
-    </div>
+      </SmoothScroll>
+    </>
   )
 }

@@ -11,6 +11,14 @@ const SmoothScroll: React.FC<ISmoothScroll> = ({ children }) => {
   const lenis = useLenis()
 
   useEffect(() => {
+    if (!lenis) return
+    if (!!sessionStorage.getItem('user')) {
+      lenis.start()
+    } else {
+      lenis.stop()
+      setTimeout(() => lenis.start(), 3000)
+    }
+
     lenis?.scrollTo(0, { immediate: true })
 
     const handleAnchorClick = (event: MouseEvent) => {
