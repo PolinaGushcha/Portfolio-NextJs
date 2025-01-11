@@ -1,6 +1,4 @@
-export const mouseController = () => {
-  const interBubble = document.getElementById('interactive') as HTMLElement
-
+export const mouseController = (cursorCircle: HTMLDivElement | null) => {
   let curX = 0
   let curY = 0
   let tgX = 0
@@ -10,8 +8,8 @@ export const mouseController = () => {
     curX += (tgX - curX) / 20
     curY += (tgY - curY) / 20
 
-    if (interBubble) {
-      interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`
+    if (cursorCircle) {
+      cursorCircle.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`
       requestAnimationFrame(() => {
         move()
       })

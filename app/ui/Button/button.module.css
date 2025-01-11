@@ -1,5 +1,5 @@
 .buttonContainer {
-  background-color: white;
+  background-color: var(--white);
   width: max-content;
   border-radius: 35px;
   display: flex;
@@ -11,7 +11,7 @@
 }
 
 .buttonContainer:hover {
-  box-shadow: 0 8px 20px -12px #000;
+  box-shadow: 0 8px 20px -12px var(--black);
 }
 
 .text {
@@ -21,6 +21,11 @@
 
 .buttonContainer:has(.text) {
   padding: 10px 20px;
+}
+
+.buttonContainer > svg {
+  width: 24px;
+  height: 24px;
 }
 
 @media screen and (max-width: 800px) {

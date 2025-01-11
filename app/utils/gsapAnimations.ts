@@ -1,37 +1,35 @@
 import gsap from 'gsap'
 
-interface GsapAnimationParams {
-  refElement: HTMLImageElement | null
-  refContainer: HTMLDivElement | null
-  containerEnd: number
-  styles: Record<string, string | number>
-}
+import { IGsapAnimationParams } from './types/gsapAnimations.types'
 
-export const gsapAnimation = ({ refElement, refContainer, containerEnd, styles }: GsapAnimationParams) => {
-  gsap.to(refElement, {
+export const gsapAnimation = ({ animatedElement, trigger, end, styles }: IGsapAnimationParams) => {
+  gsap.to(animatedElement, {
     scrollTrigger: {
-      trigger: refContainer,
+      trigger,
       scrub: true,
       start: 'top top',
-      end: containerEnd
+      end
     },
     ease: 'none',
     ...styles
   })
 
-  gsap.to(refElement, {
-    scrollTrigger: {
-      trigger: document.getElementById('experience'),
-      start: 'top top',
-      scrub: true,
-      end: containerEnd
-    },
-    ease: 'none',
-    display: 'none'
-  })
+  const experienceSection = document.getElementById('experience') as HTMLDivElement
+  if (experienceSection) {
+    gsap.to(animatedElement, {
+      scrollTrigger: {
+        trigger: experienceSection,
+        start: 'top top',
+        scrub: true,
+        end
+      },
+      ease: 'none',
+      display: 'none'
+    })
+  }
 }
 
-const foldersGsapStyles = [
+const WavesMovingValues = [
   { y: -0.2, x: -0.1 },
   { y: -1, x: -0.1 },
   { y: -0.3, x: 0.7 },
@@ -43,20 +41,14 @@ const foldersGsapStyles = [
   { y: 0.1, x: 0.2 }
 ]
 
-export const handleAddFolderStyles = (el: HTMLImageElement | null, id: number) => {
-  if (el) {
-    return {
-      x: el.offsetWidth * foldersGsapStyles[id].x,
-      y: el.offsetHeight * foldersGsapStyles[id].y * 1.5
-    }
-  } else {
-    return { x: 0, y: 0 }
+export const handleSetWavesMovingValues = (el: HTMLImageElement, id: number) => {
+  return {
+    x: el.offsetWidth * WavesMovingValues[id].x,
+    y: el.offsetHeight * WavesMovingValues[id].y * 1.5
   }
 }
 
 export const loadingTransparent = (container: HTMLElement, fromOpacity: number, toOpacity: number) => {
-  if (container) {
-    gsap.fromTo(container, { opacity: fromOpacity }, { opacity: toOpacity, duration: 1.3 })
-    gsap.to(container, { display: 'none', delay: 1.3 })
-  }
+  gsap.fromTo(container, { opacity: fromOpacity }, { opacity: toOpacity, duration: 1.3 })
+  gsap.to(container, { display: 'none', delay: 1.3 })
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { gsapAnimation, handleAddFolderStyles } from '@utils/gsapAnimations'
+import { gsapAnimation, handleSetWavesMovingValues } from '@utils/gsapAnimations'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
@@ -17,13 +17,15 @@ export const Folders: React.FC = () => {
   useEffect(() => {
     const backgroundFolders = foldersContainer.current as HTMLDivElement
     gsap.registerPlugin(ScrollTrigger)
-    folderRefs.current.forEach((refEl, id) =>
-      gsapAnimation({
-        refElement: refEl,
-        refContainer: foldersContainer.current,
-        containerEnd: backgroundFolders.offsetHeight * 1.5,
-        styles: handleAddFolderStyles(refEl, id)
-      })
+    folderRefs.current.forEach(
+      (animatedElement, id) =>
+        animatedElement &&
+        gsapAnimation({
+          animatedElement,
+          trigger: foldersContainer.current,
+          end: backgroundFolders.offsetHeight * 1.5,
+          styles: handleSetWavesMovingValues(animatedElement, id)
+        })
     )
   }, [])
 

@@ -1,29 +1,18 @@
-export const handleActiveLinkOnScroll = () => {
-  const components = [
-    document.getElementById('greeting'),
-    document.getElementById('experience'),
-    document.getElementById('skills'),
-    document.getElementById('works'),
-    document.getElementById('contacts')
-  ]
-  const navItems = [...(document.querySelectorAll('.navItem') as NodeListOf<HTMLAnchorElement>)]
-  let currentSection = 'greeting'
+import { SECTIONIDS } from '@constants/data'
 
-  components.forEach(section => {
-    if (section?.offsetTop) {
-      if (window.scrollY >= section.offsetTop - 200) {
-        currentSection = section.id
-      }
+export const handleActiveLinkOnScroll = () => {
+  const sections = SECTIONIDS.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
+  const navItems = [...(document.querySelectorAll('.navItem') as NodeListOf<HTMLAnchorElement>)]
+  let currentSectionId = SECTIONIDS[0]
+
+  for (const sectionEl of sections) {
+    if (window.scrollY >= sectionEl.offsetTop - 200) {
+      currentSectionId = sectionEl.id
     }
-  })
-  navItems.forEach(navA => {
-    if (navA.href.includes(currentSection)) {
-      navItems.forEach(el => {
-        el.style.color = 'gray'
-        el.style.fontWeight = '400'
-      })
-      navA.style.color = 'black'
-      navA.style.fontWeight = '700'
-    }
+  }
+  navItems.forEach(navItem => {
+    const isActive = navItem.href.includes(currentSectionId)
+    navItem.style.color = isActive ? 'black' : 'gray'
+    navItem.style.fontWeight = isActive ? '700' : '400'
   })
 }

@@ -1,4 +1,4 @@
-import { TITLE_TECHNICS } from '@constants/data'
+import { TECHNIC_TITLES } from '@constants/data'
 
 import styles from './works.module.css'
 
@@ -7,7 +7,7 @@ export const Works = () => {
     <section className={styles.works} id='works'>
       <h2>Works</h2>
       <div>
-        {TITLE_TECHNICS.map((el, id) => {
+        {TECHNIC_TITLES.map((el, id) => {
           return (
             <div key={id}>
               <p>{el}</p>

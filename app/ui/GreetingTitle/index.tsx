@@ -1,4 +1,4 @@
-import { TITLE_TECHNICS } from '@constants/data'
+import { TECHNIC_TITLES } from '@constants/data'
 import DownloadIcon from '@icons/download.icon.svg'
 import Gmail from '@icons/gmail.icon.svg'
 import LinkedIn from '@icons/linkedin.icon.svg'
@@ -28,7 +28,7 @@ export const GreetingTitle = () => {
           <div className={styles.technicsContainer}>
             <div>on</div>
             <div className={styles.technics}>
-              {TITLE_TECHNICS.map((el, id) => (
+              {TECHNIC_TITLES.map((el, id) => (
                 <span key={id} className={styles.technicName}>
                   {el}
                 </span>

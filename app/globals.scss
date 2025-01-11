@@ -1,41 +1,44 @@
 :root {
   --white: #fff;
-  --color-gradient-bg1: #6c00a2;
-  --color-gradient-bg2: #001152;
-  --color-circle00: #1271ffcc;
-  --color-circle01: #1271ff00;
-  --color-circle10: #dd4affcc;
-  --color-circle11: #dd4aff00;
-  --color-circle20: #64dcffcc;
-  --color-circle21: #64dcff00;
-  --color-circle30: #c83232cc;
-  --color-circle31: #c8323200;
-  --color-circle40: #b4b431cc;
-  --color-circle41: #b4b43200;
-  --color-interactive0: #8c64ffcc;
-  --color-interactive1: #8c64ff00;
+  --black: #000;
+  --darkGray-shadow: #42445a;
+  --transparent-white: #ffffff3f;
+  --baseBgGradientColor-1: #6c00a2;
+  --baseBgGradientColor-2: #001152;
+  --circlesColors00: #1271ffcc;
+  --circlesColors01: #1271ff00;
+  --circlesColors10: #dd4affcc;
+  --circlesColors11: #dd4aff00;
+  --circlesColors20: #64dcffcc;
+  --circlesColors21: #64dcff00;
+  --circlesColors30: #c83232cc;
+  --circlesColors31: #c8323200;
+  --circlesColors40: #b4b431cc;
+  --circlesColors41: #b4b43200;
+  --cursorGradientColor0: #8c64ffcc;
+  --cursorGradientColor1: #8c64ff00;
 
-  --width-bg1: 20vw;
-  --width-bg2: 39vw;
-  --width-bg3: 56vw;
-  --width-bg4: 36.8vw;
-  --width-bg5: 100vw;
-  --width-bg6: 41vw;
-  --width-bg7: 29.27vw;
-  --width-bg8: 19vw;
-  --width-bg9: 26vw;
+  --width-bg-wave1: 20vw;
+  --width-bg-wave2: 39vw;
+  --width-bg-wave3: 56vw;
+  --width-bg-wave4: 36.8vw;
+  --width-bg-wave5: 100vw;
+  --width-bg-wave6: 41vw;
+  --width-bg-wave7: 29.27vw;
+  --width-bg-wave8: 19vw;
+  --width-bg-wave9: 26vw;
 
-  --height-bg1: 37.9vw;
-  --height-bg2: 20.3vw;
-  --height-bg3: 55.6vw;
-  --height-bg4: 26.3vw;
-  --height-bg5: 37vw;
-  --height-bg6: 41vw;
-  --height-bg7: 45.7vw;
-  --height-bg8: 16.15vw;
-  --height-bg9: 49.5vw;
+  --height-bg-wave1: 37.9vw;
+  --height-bg-wave2: 20.3vw;
+  --height-bg-wave3: 55.6vw;
+  --height-bg-wave4: 26.3vw;
+  --height-bg-wave5: 37vw;
+  --height-bg-wave6: 41vw;
+  --height-bg-wave7: 45.7vw;
+  --height-bg-wave8: 16.15vw;
+  --height-bg-wave9: 49.5vw;
 
-  --percent: 1.5;
+  --percent-of-change-size: 1.5;
 }
 
 * {

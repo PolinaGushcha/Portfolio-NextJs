@@ -1,4 +1,4 @@
-export interface IExperience {
+export interface IExperienceCard {
   id: number
   name: string
   duration: string
@@ -14,7 +14,7 @@ export interface IExperienceProducts {
   link?: string
 }
 
-export interface IEducation {
+export interface IEducationCards {
   id: number
   name: string
   description: string

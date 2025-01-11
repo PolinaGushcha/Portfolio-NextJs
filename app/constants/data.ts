@@ -1,8 +1,10 @@
-import { IEducation, IExperience, ITechniquesOptions } from './types/data.types'
+import { IEducationCards, IExperienceCard, ITechniquesOptions } from './types/data.types'
 
-export const TITLE_TECHNICS = ['React', 'React Native', 'Next.js', 'Angular', 'React']
+export const SECTIONIDS: string[] = ['greeting', 'experience', 'skills', 'works', 'contacts']
 
-export const EXPERIENCE: IExperience[] = [
+export const TECHNIC_TITLES: string[] = ['React', 'React Native', 'Next.js', 'Angular', 'React']
+
+export const EXPERIENCE_CARDS: IExperienceCard[] = [
   {
     id: 1,
     name: 'GSU-AI',
@@ -39,7 +41,7 @@ export const EXPERIENCE: IExperience[] = [
   }
 ]
 
-export const EDUCATION: IEducation[] = [
+export const EDUCATION_CARDS: IEducationCards[] = [
   {
     id: 1,
     name: 'Angular the rolling scope school course',
@@ -76,7 +78,7 @@ export const TECHNIQUES_OPTIONS: ITechniquesOptions[] = [
   { id: 7, value: 'other', name: 'Other' }
 ]
 
-export const SKILLS = [
+export const SKILLS_LIST: string[] = [
   'HTML, CSS',
   'SCSS & SASS',
   'Tailwind',

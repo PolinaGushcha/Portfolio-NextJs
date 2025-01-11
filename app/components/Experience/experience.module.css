@@ -1,4 +1,4 @@
-@import '../../colors-properties.module.css';
+@import '../../constants/colors-properties.module.css';
 
 .experience {
   padding: 100px 0;
@@ -43,10 +43,10 @@
   font-size: 45px;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to right, var(--color-gradient-bg1) 0%, #ffffff 100%);
+  background-image: linear-gradient(to right, var(--baseBgGradientColor-1) 0%, #ffffff 100%);
   width: fit-content;
   position: relative;
-  transition-property: --color-gradient-bg1;
+  transition-property: --baseBgGradientColor-1;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
 }
@@ -75,9 +75,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, rgba(136, 80, 247, 0.2) 0%, var(--color-gradient-bg1) 100%);
+  background: linear-gradient(90deg, rgba(136, 80, 247, 0.2) 0%, var(--baseBgGradientColor-1) 100%);
   opacity: 0;
-  transition-property: --color-gradient-bg1;
+  transition-property: --baseBgGradientColor-1;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
   transition: opacity 0.4s ease-in-out;
@@ -88,10 +88,10 @@
 }
 
 .cardTime {
-  color: var(--color-gradient-bg1);
+  color: var(--baseBgGradientColor-1);
   font-weight: bold;
   position: relative;
-  transition-property: --color-gradient-bg1;
+  transition-property: --baseBgGradientColor-1;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
 }

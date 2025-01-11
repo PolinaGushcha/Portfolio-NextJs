@@ -1,6 +1,6 @@
-@import '../../colors-properties.module.css';
+@import '../../constants/colors-properties.module.css';
 
-.circle {
+.circleGeneral {
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
   position: absolute;
@@ -17,8 +17,8 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(40deg, var(--color-gradient-bg1), var(--color-gradient-bg2));
-  transition-property: --color-gradient-bg1, --color-gradient-bg2;
+  background: linear-gradient(40deg, var(--baseBgGradientColor-1), var(--baseBgGradientColor-2));
+  transition-property: --baseBgGradientColor-1, --baseBgGradientColor-2;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
 }
@@ -34,40 +34,40 @@
   display: none;
 }
 
-.g1 {
-  background: radial-gradient(circle at center, var(--color-circle00) 0, var(--color-circle01) 50%) no-repeat;
-  transition-property: --color-circle00, --color-circle01;
+.circleGradient1 {
+  background: radial-gradient(circle at center, var(--circlesColors00) 0, var(--circlesColors01) 50%) no-repeat;
+  transition-property: --circlesColors00, --circlesColors01;
   transform-origin: center center;
   animation: moveVertical 30s ease infinite;
 }
 
-.g2 {
-  background: radial-gradient(circle at center, var(--color-circle10) 0, var(--color-circle11) 50%) no-repeat;
-  transition-property: --color-circle10, --color-circle11;
+.circleGradient2 {
+  background: radial-gradient(circle at center, var(--circlesColors10) 0, var(--circlesColors11) 50%) no-repeat;
+  transition-property: --circlesColors10, --circlesColors11;
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
 }
 
-.g3 {
-  background: radial-gradient(circle at center, var(--color-circle20) 0, var(--color-circle21) 50%) no-repeat;
-  transition-property: --color-circle20, --color-circle21;
+.circleGradient3 {
+  background: radial-gradient(circle at center, var(--circlesColors20) 0, var(--circlesColors21) 50%) no-repeat;
+  transition-property: --circlesColors20, --circlesColors21;
   top: calc(50% - 80% / 2 + 200px);
   left: calc(50% - 80% / 2 - 500px);
   transform-origin: calc(50% + 400px);
   animation: moveInCircle 40s linear infinite;
 }
 
-.g4 {
-  background: radial-gradient(circle at center, var(--color-circle30) 0, var(--color-circle31) 50%) no-repeat;
-  transition-property: --color-circle30, --color-circle31;
+.circleGradient4 {
+  background: radial-gradient(circle at center, var(--circlesColors30) 0, var(--circlesColors31) 50%) no-repeat;
+  transition-property: --circlesColors30, --circlesColors31;
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
 }
 
-.interactive {
-  background: radial-gradient(circle at center, var(--color-interactive0) 0, var(--color-interactive1) 50%) no-repeat;
-  transition-property: --color-interactive0, --color-interactive1;
+.cursorCircle {
+  background: radial-gradient(circle at center, var(--cursorGradientColor0) 0, var(--cursorGradientColor1) 50%) no-repeat;
+  transition-property: --cursorGradientColor0, --cursorGradientColor1;
   width: 100%;
   height: 100%;
   top: -50%;

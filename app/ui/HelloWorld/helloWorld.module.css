@@ -20,7 +20,7 @@
 
 .path {
   fill: rgba(255, 255, 255, 0);
-  stroke: white;
+  stroke: var(--white);
   stroke-width: 2;
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;

@@ -1,6 +1,16 @@
-export interface IBackgroundColorsPalette {
-  red: [string, string, string[], string, string]
-  green: [string, string, string[], string, string]
-  blue: [string, string, string[], string, string]
-  purple: [string, string, string[], string, string]
+export type IBackgroundColorsPalette = Record<PaletteColor, ColorSchema>
+
+export enum PaletteColor {
+  RED = 'red',
+  GREEN = 'green',
+  BLUE = 'blue',
+  PURPLE = 'purple'
+}
+
+export type ColorSchema = {
+  baseBgGradientColor_1: string
+  baseBgGradientColor_2: string
+  circlesColors: string[]
+  cursorGradientColor1: string
+  cursorGradientColor2: string
 }

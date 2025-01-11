@@ -31,15 +31,15 @@
   height: 100px;
   text-align: center;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--transparent-white);
   border-radius: 20px;
   padding: 0 20px;
-  box-shadow: inset 0px 40px 40px -10px #ffffff3f;
+  box-shadow: inset 0px 40px 40px -10px var(--transparent-white);
 }
 
 .technicName {
   display: block;
-  color: white;
+  color: var(--white);
   animation: technics-change 5s infinite;
 }
 
@@ -74,7 +74,7 @@
   text-align: center;
   font-size: 70px;
   line-height: 90px;
-  color: white;
+  color: var(--white);
   padding: 0 40px;
 }
 
@@ -83,7 +83,7 @@
   font-size: 24px;
   margin-top: 30px;
   margin-right: 40px;
-  color: white;
+  color: var(--white);
 }
 
 .mainLinks {
@@ -122,6 +122,7 @@
     font-size: 16px;
   }
 }
+
 @media screen and (max-width: 800px) {
   .technics {
     height: 46px;

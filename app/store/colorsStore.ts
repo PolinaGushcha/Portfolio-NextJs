@@ -1,35 +1,20 @@
 import { BACKGROUNDCOLORSPALETTE } from '@constants/color'
-import { IBackgroundColorsPalette } from '@constants/types/colors.types'
+import { ColorSchema, PaletteColor } from '@constants/types/colors.types'
 import { makeAutoObservable } from 'mobx'
 
 class ColorsStore {
-  colors: [string, string, string[], string, string] = BACKGROUNDCOLORSPALETTE.purple
-  color = 'purple' as keyof IBackgroundColorsPalette
+  colors: ColorSchema = BACKGROUNDCOLORSPALETTE[PaletteColor.PURPLE]
+  color: PaletteColor = PaletteColor.PURPLE
 
   constructor() {
     makeAutoObservable(this)
   }
 
-  handleSetColors = (color: string) => {
-    switch (color) {
-      case 'red':
-        this.colors = BACKGROUNDCOLORSPALETTE.red
-        this.color = 'red'
-        break
-      case 'green':
-        this.colors = BACKGROUNDCOLORSPALETTE.green
-        this.color = 'green'
-        break
-      case 'blue':
-        this.colors = BACKGROUNDCOLORSPALETTE.blue
-        this.color = 'blue'
-        break
-      case 'purple':
-        this.colors = BACKGROUNDCOLORSPALETTE.purple
-        this.color = 'purple'
-        break
-    }
+  handleSetColors = (color: PaletteColor) => {
+    this.colors = BACKGROUNDCOLORSPALETTE[color]
+    this.color = color
   }
 }
 
-export default new ColorsStore()
+const colorsStore = new ColorsStore()
+export default colorsStore

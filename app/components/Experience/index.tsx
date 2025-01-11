@@ -1,4 +1,4 @@
-import { EDUCATION, EXPERIENCE } from '@constants/data'
+import { EDUCATION_CARDS, EXPERIENCE_CARDS } from '@constants/data'
 import EducationMedal from '@icons/educationMedal.svg'
 import ExperienceMedal from '@icons/experienceMedal.svg'
 
@@ -14,7 +14,7 @@ export const Experience = () => {
             <h2 className={styles.titleText}>My experience</h2>
           </div>
           <div className={styles.cardList}>
-            {EXPERIENCE.map(el => {
+            {EXPERIENCE_CARDS.map(el => {
               return (
                 <div className={styles.card} key={el.id}>
                   <p className={styles.cardTime}>date</p>
@@ -31,7 +31,7 @@ export const Experience = () => {
             <h2 className={styles.titleText}>My education</h2>
           </div>
           <div className={styles.cardList}>
-            {EDUCATION.map(el => {
+            {EDUCATION_CARDS.map(el => {
               return (
                 <div className={styles.card} key={el.id}>
                   <p className={styles.cardTime}>{el.date}</p>

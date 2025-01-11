@@ -1,10 +1,12 @@
 'use client'
 
+import { Contacts } from '@components/Contacts'
 import { Experience } from '@components/Experience'
 import { Greeting } from '@components/Greeting'
 import { Loading } from '@components/Loading'
 import { Navigation } from '@components/Navigation'
 import { Skills } from '@components/Skills'
+import { Works } from '@components/Works'
 import { Folders } from '@ui/Folders'
 import { handleActiveLinkOnScroll } from '@utils/activeLinkOnScroll'
 import { useEffect } from 'react'
@@ -26,6 +28,8 @@ export default function Main() {
           <Greeting />
           <Experience />
           <Skills />
+          <Works />
+          <Contacts />
         </main>
       </div>
     </div>
