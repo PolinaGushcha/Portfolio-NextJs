@@ -4,22 +4,11 @@ import Gmail from '@icons/gmail.icon.svg'
 import LinkedIn from '@icons/linkedin.icon.svg'
 import Telegram from '@icons/telegram.icon.svg'
 import { Button } from '@ui/Button/'
+import Link from 'next/link'
 
 import styles from './greetingTitle.module.css'
 
 export const GreetingTitle = () => {
-  const downloadFile = () => {
-    console.log('downloadFile')
-  }
-
-  const openPage = () => {
-    console.log('openPage')
-  }
-
-  const goToContacts = () => {
-    console.log('goToContacts')
-  }
-
   return (
     <section id='greeting'>
       <div className={styles.container}>
@@ -41,16 +30,24 @@ export const GreetingTitle = () => {
           interfaces and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and transportation.
         </p>
         <div className={styles.mainLinks}>
-          <Button icon={<DownloadIcon />} text={'Download CV'} click={downloadFile} />
+          <Link href='/files/CV_Frontend_Dev_Polina.pdf' download>
+            <Button icon={<DownloadIcon />} text={'Download CV'} />
+          </Link>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Button icon={<LinkedIn />} click={openPage} />
+              <Link href='https://www.linkedin.com/in/polina-gushcha/' target='_blank'>
+                <Button icon={<LinkedIn />} />
+              </Link>
             </li>
             <li className={styles.li}>
-              <Button icon={<Gmail />} click={goToContacts} />
+              <Link href='mailto:polina.hushcha@gmail.com' target='_blank'>
+                <Button icon={<Gmail />} />
+              </Link>
             </li>
             <li className={styles.li}>
-              <Button icon={<Telegram />} click={openPage} />
+              <Link href='https://t.me/PolinaGushcha' target='_blank'>
+                <Button icon={<Telegram />} />
+              </Link>
             </li>
           </ul>
         </div>

@@ -94,3 +94,5 @@ export const SKILLS_LIST: string[] = [
   'Ionic',
   'Angular'
 ]
+
+export const DELAY_TIME: number = 3000

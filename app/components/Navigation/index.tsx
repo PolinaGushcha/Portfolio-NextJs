@@ -3,6 +3,7 @@
 import { BurgerMenu } from '@ui/BurgerMenu'
 import { ChangeColors } from '@ui/ChangeColors'
 import clsx from 'clsx'
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import styles from './navigation.module.css'
@@ -36,29 +37,29 @@ export const Navigation: React.FC = () => {
         </div>
         <ul className={clsx(styles.navUl, isOpened && styles.changeColorsOpened)}>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#greeting'>
+            <Link className={`navItem ${styles.navA}`} href='#greeting'>
               Home
-            </a>
+            </Link>
           </li>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#experience'>
+            <Link className={`navItem ${styles.navA}`} href='#experience'>
               Experience
-            </a>
+            </Link>
           </li>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#skills'>
+            <Link className={`navItem ${styles.navA}`} href='#skills'>
               Skills
-            </a>
+            </Link>
           </li>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#works'>
+            <Link className={`navItem ${styles.navA}`} href='#works'>
               Works
-            </a>
+            </Link>
           </li>
           <li className={styles.navLi}>
-            <a className={`navItem ${styles.navA}`} href='#contacts'>
+            <Link className={`navItem ${styles.navA}`} href='#contacts'>
               Contacts
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

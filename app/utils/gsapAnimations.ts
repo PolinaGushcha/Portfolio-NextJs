@@ -48,7 +48,9 @@ export const handleSetWavesMovingValues = (el: HTMLImageElement, id: number) => 
   }
 }
 
-export const loadingTransparent = (container: HTMLElement, fromOpacity: number, toOpacity: number) => {
-  gsap.fromTo(container, { opacity: fromOpacity }, { opacity: toOpacity, duration: 1.3 })
-  gsap.to(container, { display: 'none', delay: 1.3 })
+export const loadingTransparent = (container: HTMLElement | null, fromOpacity: number, toOpacity: number) => {
+  if (container) {
+    gsap.fromTo(container, { opacity: fromOpacity }, { opacity: toOpacity, duration: 1.3 })
+    gsap.to(container, { display: 'none', delay: 1.3 })
+  }
 }

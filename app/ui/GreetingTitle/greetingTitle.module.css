@@ -93,6 +93,10 @@
   justify-content: space-between;
   width: 100%;
 }
+.mainLinks a {
+  text-decoration: none;
+  color: var(--black);
+}
 
 .ul {
   list-style: none;

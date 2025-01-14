@@ -11,7 +11,7 @@ import { Works } from '@components/Works'
 import Background from '@ui/Background'
 import { Folders } from '@ui/Folders'
 import { handleActiveLinkOnScroll } from '@utils/activeLinkOnScroll'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import styles from './page.module.css'
 

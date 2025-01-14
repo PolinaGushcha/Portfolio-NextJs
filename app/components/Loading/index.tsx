@@ -1,30 +1,27 @@
 'use client'
 
+import { DELAY_TIME } from '@constants/data'
 import SpinerIcon from '@icons/spinner.icon.svg'
 import { loadingTransparent } from '@utils/gsapAnimations'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import styles from './loading.module.css'
 
 export const Loading = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
   const loadingRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setIsLoading(!!sessionStorage.getItem('user'))
     if (!sessionStorage.getItem('user')) {
       setTimeout(() => {
         sessionStorage.setItem('user', 'user')
-        if (loadingRef.current) {
-          loadingTransparent(loadingRef.current, 1, 0)
-        }
-      }, 3000)
+        loadingTransparent(loadingRef.current, 1, 0)
+      }, DELAY_TIME)
+    } else {
+      loadingTransparent(loadingRef.current, 1, 0)
     }
   }, [])
 
-  return isLoading ? (
-    <></>
-  ) : (
+  return (
     <div ref={loadingRef} className={styles.textContainer}>
       <SpinerIcon />
       <h2>Loading</h2>

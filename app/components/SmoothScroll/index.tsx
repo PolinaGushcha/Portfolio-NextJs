@@ -1,5 +1,6 @@
 'use client'
 
+import { DELAY_TIME } from '@constants/data'
 import ReactLenis, { useLenis } from 'lenis/react'
 import { useEffect } from 'react'
 
@@ -16,7 +17,7 @@ const SmoothScroll: React.FC<ISmoothScroll> = ({ children }) => {
       lenis.start()
     } else {
       lenis.stop()
-      setTimeout(() => lenis.start(), 3000)
+      setTimeout(() => lenis.start(), DELAY_TIME)
     }
 
     lenis?.scrollTo(0, { immediate: true })

@@ -1,5 +1,6 @@
 'use client'
 
+import { DELAY_TIME } from '@constants/data'
 import { useEffect, useRef } from 'react'
 
 import styles from './helloWorld.module.css'
@@ -11,7 +12,7 @@ export const HelloWorld = () => {
     if (!sessionStorage.getItem('user')) {
       setTimeout(() => {
         pathRefs.map(el => el.current && el.current.classList.add(styles.pathAnimation))
-      }, 3400)
+      }, DELAY_TIME + 400)
     } else {
       pathRefs.map(el => el.current && el.current.classList.add(styles.pathAnimation))
     }
