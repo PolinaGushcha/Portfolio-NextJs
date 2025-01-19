@@ -1,6 +1,7 @@
 export interface IExperienceCard {
   id: number
   name: string
+  link: string
   duration: string
   description: string[]
   products: IExperienceProducts[]
@@ -10,13 +11,15 @@ export interface IExperienceCard {
 export interface IExperienceProducts {
   id: number
   name: string
-  description: string
   link?: string
 }
 
 export interface IEducationCards {
   id: number
   name: string
+  organization: string
+  organizationLink: string
+  certificateLink?: string
   description: string
   date: string
 }
