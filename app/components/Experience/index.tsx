@@ -1,6 +1,4 @@
 import { EDUCATION_CARDS, EXPERIENCE_CARDS } from '@constants/data'
-import EducationMedal from '@icons/educationMedal.svg'
-import ExperienceMedal from '@icons/experienceMedal.svg'
 import Link from 'next/link'
 
 import styles from './experience.module.css'
@@ -9,59 +7,89 @@ export const Experience = () => {
   return (
     <section className={styles.experience} id='experience'>
       <div className={styles.container}>
+
+        {/* ── My experience ── */}
         <article className={styles.article}>
           <div className={styles.title}>
-            <ExperienceMedal />
             <h2 className={styles.titleText}>My experience</h2>
           </div>
           <div className={styles.cardList}>
-            {EXPERIENCE_CARDS.map(el => {
-              return (
-                <div className={styles.card} key={el.id}>
+            {EXPERIENCE_CARDS.map(el => (
+              <div className={styles.cardWrapper} key={el.id}>
+                <div className={styles.timelineDot} />
+                <div className={styles.card}>
                   <p className={styles.cardTime}>{el.duration}</p>
-                  <Link href={el.link} target='_blank'>
-                    <h3 className={styles.cardTitle}>{el.name}</h3>
-                  </Link>
-                  <p className={styles.cardText}>{el.description}</p>
+                  <h3 className={styles.cardTitle}>
+                    <Link href={el.link} className={styles.link} target='_blank'>
+                      {el.name}
+                    </Link>
+                  </h3>
+                  <ul className={styles.cardTextList}>
+                    {el.description.map((line, i) => (
+                      <li key={i}>{line.trim()}</li>
+                    ))}
+                  </ul>
                   <div>
-                    <p>
-                      My apps:{' '}
+                    <span className={styles.appsLabel}>Projects</span>
+                    <div className={styles.appsRow}>
                       {el.products.map(product =>
                         product.link ? (
-                          <Link key={product.id} href={product.link}>
-                            {product.name},
+                          <Link
+                            key={product.id}
+                            className={styles.appChip}
+                            href={product.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            {product.name}
                           </Link>
                         ) : (
-                          <span key={product.id}>{product.name}</span>
+                          <span key={product.id} className={styles.appChip}>
+                            {product.name}
+                          </span>
                         )
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
         </article>
+
+        {/* ── My education ── */}
         <article className={styles.article}>
           <div className={styles.title}>
-            <EducationMedal />
             <h2 className={styles.titleText}>My education</h2>
           </div>
           <div className={styles.cardList}>
-            {EDUCATION_CARDS.map(el => {
-              return (
-                <div className={styles.card} key={el.id}>
+            {EDUCATION_CARDS.map(el => (
+              <div className={styles.cardWrapper} key={el.id}>
+                <div className={styles.timelineDot} />
+                <div className={styles.card}>
                   <p className={styles.cardTime}>{el.date}</p>
                   <h3 className={styles.cardTitle}>
-                    <Link href={el.organizationLink}>{el.name}</Link>
+                    <Link className={styles.link} href={el.organizationLink} target='_blank'>
+                      {el.name}
+                    </Link>
                   </h3>
                   <p className={styles.cardText}>{el.description}</p>
-                  {el.certificateLink && <Link href={el.certificateLink}>Certification</Link>}
+                  {el.certificateLink && (
+                    <Link
+                      className={styles.certLink}
+                      href={el.certificateLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      View certificate →
+                    </Link>
+                  )}
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
         </article>
+
       </div>
     </section>
   )

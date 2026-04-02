@@ -6,15 +6,22 @@ import { useEffect, useRef } from 'react'
 import styles from './helloWorld.module.css'
 
 export const HelloWorld = () => {
-  const pathRefs = Array.from({ length: 9 }, () => useRef<SVGPathElement>(null))
+  const pathRefs = useRef<(SVGPathElement | null)[]>([])
 
   useEffect(() => {
+    const paths = pathRefs.current
+
+    const addClass = () => {
+      paths.forEach(el => {
+        if (el) el.classList.add(styles.pathAnimation)
+      })
+    }
+
     if (!sessionStorage.getItem('user')) {
-      setTimeout(() => {
-        pathRefs.map(el => el.current && el.current.classList.add(styles.pathAnimation))
-      }, DELAY_TIME + 400)
+      const id = setTimeout(addClass, DELAY_TIME + 400)
+      return () => clearTimeout(id)
     } else {
-      pathRefs.map(el => el.current && el.current.classList.add(styles.pathAnimation))
+      addClass()
     }
   }, [])
 
@@ -23,7 +30,9 @@ export const HelloWorld = () => {
       <div className={styles.svgContainer}>
         <svg className={styles.svg} viewBox='0 0 909 280' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
-            ref={pathRefs[0]}
+            ref={el => {
+              pathRefs.current[0] = el
+            }}
             className={styles.path}
             d='M820.541 154.8C792.941 126.6 748.541 204 770.141 208.2C787.541 211.8 810.941 168.6 820.541 154.8ZM816.341 267C822.941 270.6 
             863.741 181.2 875.141 163.8C880.541 163.2 880.541 167.4 883.541 168.6C870.941 186 847.541 238.8 833.741 259.8C828.341 267.6 814.541 
@@ -34,7 +43,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[1]}
+            ref={el => {
+              pathRefs.current[1] = el
+            }}
             className={styles.path}
             strokeDashoffset={40}
             strokeDasharray={30}
@@ -46,7 +57,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[2]}
+            ref={el => {
+              pathRefs.current[2] = el
+            }}
             className={styles.path}
             d='M641.834 144C655.634 136.2 652.634 157.2 648.434 165.6C655.634 159.6 672.434 127.8 694.634 126C704.834 128.4 691.634 146.4 
             698.834 152.4C699.434 154.2 705.434 150 706.634 152.4C706.034 155.4 709.634 157.8 700.634 159.6C693.434 161.4 684.434 156 686.234 
@@ -55,7 +68,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[3]}
+            ref={el => {
+              pathRefs.current[3] = el
+            }}
             className={styles.path}
             d='M645.045 157.8C638.445 159 625.845 159.6 606.045 160.8C617.445 188.4 581.445 224.4 558.645 220.8C528.045 215.4 543.045 166.8 
             563.445 151.8C574.845 143.4 589.245 139.8 600.645 147C610.245 151.2 624.045 150.6 635.445 150C647.445 149.4 655.845 151.2 645.045 
@@ -64,7 +79,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[4]}
+            ref={el => {
+              pathRefs.current[4] = el
+            }}
             className={styles.path}
             d='M455.005 149.4C464.005 147 465.205 151.8 462.805 159.6C458.605 174 438.805 208.8 444.805 211.2C449.605 217.8 471.805 166.2 
             487.405 153C492.205 154.8 496.405 156 495.205 160.8C492.805 172.8 483.805 194.4 484.405 209.4C495.205 210 509.605 177 522.205 
@@ -74,7 +91,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[5]}
+            ref={el => {
+              pathRefs.current[5] = el
+            }}
             className={styles.path}
             d='M383.131 157.8C376.531 159 363.931 159.6 344.131 160.8C355.531 188.4 319.531 224.4 296.731 220.8C266.131 215.4 281.131 166.8 
             301.531 151.8C312.931 143.4 327.331 139.8 338.731 147C348.331 151.2 362.131 150.6 373.531 150C385.531 149.4 393.931 151.2 383.131 
@@ -83,7 +102,9 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[6]}
+            ref={el => {
+              pathRefs.current[6] = el
+            }}
             className={styles.path}
             d='M240.519 181.8C237.519 194.4 214.719 265.2 241.719 247.2C256.119 237.6 279.519 190.8 286.719 177C285.519 176.4 295.719 173.4 
             293.919 181.2C286.719 195.6 271.719 231 252.519 252.6C242.319 264 233.919 265.2 227.919 260.4C219.519 253.8 217.719 239.4 218.319 
@@ -97,7 +118,10 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[7]}
+            // ref={pathRefs[7]}
+            ref={el => {
+              pathRefs.current[7] = el
+            }}
             className={styles.path}
             d='M109.747 183C130.147 174.6 145.147 168 153.547 157.8C158.347 151.8 157.147 137.4 138.547 147C128.347 152.4 110.947 170.4 109.747 
             183ZM139.147 134.4C154.147 132.6 165.547 142.8 163.747 156.6C159.547 181.2 108.547 196.2 108.547 196.2C110.347 258 175.147 182.4 176.947 
@@ -105,7 +129,10 @@ export const HelloWorld = () => {
             fill='white'
           />
           <path
-            ref={pathRefs[8]}
+            // ref={pathRefs[8]}
+            ref={el => {
+              pathRefs.current[8] = el
+            }}
             className={styles.path}
             d='M2 218.4C18.8 166.8 36.2 110.4 54.2 60.0005C59 46.2004 68.6 16.2004 81.2 12.0005C96.2 7.20045 100.4 27.6004 98.6 38.4004C95.6 
             61.8005 71.6 109.8 50.6 140.4L28.4 171.6C27.2 175.8 26 179.4 24.8 183.6C33.8 169.2 50 144.6 60.8 138.6C68 135 75.2 136.8 78.2 

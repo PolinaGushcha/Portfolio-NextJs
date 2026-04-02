@@ -1,8 +1,8 @@
-import { IEducationCards, IExperienceCard, ITechniquesOptions } from './types/data.types'
+import { IEducationCards, IExperienceCard, ITechniquesOptions, IWorkSection } from './types/data.types'
 
 export const SECTIONIDS: string[] = ['greeting', 'experience', 'skills', 'works', 'contacts']
 
-export const TECHNIC_TITLES: string[] = ['React', 'React Native', 'Next.js', 'Angular', 'React']
+export const TECHNIC_TITLES: string[] = ['JavaScript', 'TypeScript', 'React', 'React Native', 'Next.js', 'Angular', 'Node.js']
 
 export const EXPERIENCE_CARDS: IExperienceCard[] = [
   {
@@ -132,7 +132,147 @@ export const SKILLS_LIST: string[] = [
   'Gsap',
   'React Native',
   'Ionic',
-  'Angular'
+  'Angular',
+  'Node.js'
 ]
 
 export const DELAY_TIME: number = 3000
+
+export const WORKS_CARDS: IWorkSection[] = [
+  {
+    tech: 'React',
+    cards: [
+      {
+        id: 1,
+        title: 'Cooking AI',
+        description:
+          'AI-powered recipe generation SPA built at GSU-AI. Participated in app architecture ' +
+          'from the ground up — core components, navigation, and UI across a microservice setup.',
+        link: 'https://cooking.alivio.ai/'
+      },
+      {
+        id: 2,
+        title: 'Logistics Dashboard',
+        description:
+          'React & React-Admin web app for real-time tracking of logistics deliveries at Milestep. ' +
+          'Built the full frontend from scratch, covering both client and admin sides.'
+      },
+      {
+        id: 3,
+        title: 'Portfolio Website',
+        description:
+          'This portfolio itself — a dynamic single-page app with animated sections, a themed ' +
+          'color switcher, smooth scroll, and a contact form backed by a serverless API.'
+      }
+    ]
+  },
+  {
+    tech: 'React Native',
+    cards: [
+      {
+        id: 1,
+        title: 'Cooking AI Mobile',
+        description:
+          'Mobile companion to the Cooking AI web app. Rewrote web components into native screens, ' +
+          'handled onboarding, and ran code reviews for new React Native developers.'
+      },
+      {
+        id: 2,
+        title: 'Irregular Verbs',
+        description:
+          'English grammar learning app published on the Apple App Store. Features interactive ' +
+          'verb drills and progress tracking built with React Native at Taqtile.',
+        link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704'
+      },
+      {
+        id: 3,
+        title: 'Posture',
+        description:
+          'Health & posture monitoring mobile app available on Google Play. Developed within the ' +
+          'Ionic + React Native stack at Taqtile, with Firebase integration for user data.',
+        link: 'https://play.google.com/store/apps/details?id=io.ionic.posture&hl=en_US&pli=1'
+      }
+    ]
+  },
+  {
+    tech: 'Next.js',
+    cards: [
+      {
+        id: 1,
+        title: 'HealthUApp',
+        description:
+          'Health & wellness platform built with Next.js at Taqtile. Implemented complex forms, ' +
+          'animations, SEO optimisation, and Firebase integration for a production health product.',
+        link: 'https://healthuapp.com/'
+      },
+      {
+        id: 2,
+        title: 'SpeechScribe Audio',
+        description:
+          'Chrome extension for audio transcription developed in Next.js at Taqtile. ' +
+          'Handles real-time speech recognition and published to the Chrome Web Store.',
+        link: 'https://chromewebstore.google.com/detail/' + 'speechscribe-audio-z-d%C5%BAwi/gijnkelbkbmaekkkgoalpimggbmoahol?hl=pl'
+      },
+      {
+        id: 3,
+        title: 'Portfolio (Next.js)',
+        description:
+          'This portfolio is powered by Next.js — leveraging the App Router, server components, ' +
+          'and a serverless email API to deliver a fast, SEO-friendly developer showcase.'
+      }
+    ]
+  },
+  {
+    tech: 'Angular',
+    cards: [
+      {
+        id: 1,
+        title: 'RS School Angular Project',
+        description:
+          'Capstone project for the RSSchool Angular course. Finished in the top 5% of all students, ' +
+          'covering advanced RxJS, NgRx state management, lazy loading, and unit testing.',
+        link: 'https://app.rs.school/certificate/d3d024a3'
+      },
+      {
+        id: 2,
+        title: 'Admin Dashboard (Angular)',
+        description:
+          'Feature-rich data management dashboard built with Angular and Angular Material. ' +
+          'Includes role-based routing, reactive forms with validation, and REST API communication.'
+      },
+      {
+        id: 3,
+        title: 'E-commerce Storefront',
+        description:
+          'Angular SPA for an online storefront with a product catalogue, cart management, and ' +
+          'checkout flow. Optimised with OnPush change detection and lazy-loaded modules.'
+      }
+    ]
+  },
+  {
+    tech: 'Node.js',
+    cards: [
+      {
+        id: 1,
+        title: 'Serverless Email API',
+        description:
+          'Node.js serverless function (Next.js API route) powering the contact form on this ' +
+          'portfolio. Validates input and sends email via Nodemailer with environment-based config.'
+      },
+      {
+        id: 2,
+        title: 'REST API Boilerplate',
+        description:
+          'Express + TypeScript REST API with JWT authentication, request validation via Zod, ' +
+          'and Prisma ORM. Designed as a reusable backend starter for full-stack projects.'
+      },
+      {
+        id: 3,
+        title: 'Real-time Chat Server',
+        description:
+          'WebSocket chat server built with Node.js and Socket.IO. Supports multiple rooms, ' +
+          'typing indicators, and message history stored in a lightweight SQLite database.'
+      }
+    ]
+  }
+]

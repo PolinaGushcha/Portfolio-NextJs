@@ -6,6 +6,7 @@ import Ionic from '@icons/ionic.icon.svg'
 import JavaScript from '@icons/javascript.icon.svg'
 import MobXIcon from '@icons/mobx.icon.svg'
 import NextJs from '@icons/nextjs.icon.svg'
+import NodeJs from '@icons/nodejs.icon.svg'
 import ReactIcon from '@icons/react.icon.svg'
 import ReactAdmin from '@icons/reactadmin.icon.svg'
 import ReactNative from '@icons/reactnative.icon.svg'
@@ -27,5 +28,6 @@ export const skillsIconsArr = [
   <Gsap key={10} />,
   <ReactNative key={11} />,
   <Ionic key={12} />,
-  <Angular key={13} />
+  <Angular key={13} />,
+  <NodeJs key={14} />
 ]

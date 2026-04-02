@@ -1,26 +1,80 @@
-import { TECHNIC_TITLES } from '@constants/data'
+'use client'
+
+import { TECHNIC_TITLES, WORKS_CARDS } from '@constants/data'
+import clsx from 'clsx'
+import { useLayoutEffect, useRef, useState } from 'react'
 
 import styles from './works.module.css'
 
+const EXIT_DURATION = 220
+
 export const Works = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [displayIndex, setDisplayIndex] = useState<number>(0)
+  const [isExiting, setIsExiting] = useState(false)
+  const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const tabRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [gladeStyle, setGladeStyle] = useState({ left: 0, width: 0 })
+
+  useLayoutEffect(() => {
+    const tab = tabRefs.current[selectedIndex]
+    if (!tab) return
+    setGladeStyle({ left: tab.offsetLeft, width: tab.offsetWidth })
+  }, [selectedIndex])
+
+  const handleTabChange = (id: number) => {
+    if (id === selectedIndex || isExiting) return
+    setSelectedIndex(id)
+    setIsExiting(true)
+    if (exitTimer.current) clearTimeout(exitTimer.current)
+    exitTimer.current = setTimeout(() => {
+      setDisplayIndex(id)
+      setIsExiting(false)
+    }, EXIT_DURATION)
+  }
+
+  const activeCards = WORKS_CARDS[displayIndex]?.cards ?? []
+
   return (
     <section className={styles.works} id='works'>
-      <h2>Works</h2>
-      <div>
-        {TECHNIC_TITLES.map((el, id) => {
-          return (
-            <div key={id}>
-              <p>{el}</p>
-            </div>
-          )
-        })}
-        <div>
-          <div>
-            <div>
-              <h3>Card title</h3>
-              <p>card description</p>
-            </div>
+      <div className={styles.container}>
+        <h2 className={styles.titleText}>My works</h2>
+
+        <div className={styles.tabsContainer}>
+          <div className={styles.tabs}>
+            <div
+              className={styles.glade}
+              style={{ left: `${gladeStyle.left}px`, width: `${gladeStyle.width}px` }}
+            />
+            {TECHNIC_TITLES.map((el, id) => (
+              <div
+                className={clsx(styles.tab, selectedIndex === id && styles.activeTab)}
+                key={id}
+                ref={el => { tabRefs.current[id] = el }}
+                onClick={() => handleTabChange(id)}
+              >
+                <p className={styles.tabText}>{el}</p>
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className={clsx(styles.cardContainer, isExiting && styles.cardExiting)}>
+          {activeCards.map(card => (
+            <div className={styles.card} key={card.id}>
+              <div className={styles.image} />
+              <div className={styles.cardBody}>
+                <h3 className={styles.cardTitle}>{card.title}</h3>
+                <p className={styles.cardDescription}>{card.description}</p>
+                {card.link && (
+                  <a className={styles.cardLink} href={card.link} target='_blank' rel='noopener noreferrer'>
+                    View project →
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

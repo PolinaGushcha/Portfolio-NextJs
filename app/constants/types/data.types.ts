@@ -29,3 +29,15 @@ export interface ITechniquesOptions {
   value: string
   name: string
 }
+
+export interface IWorkCard {
+  id: number
+  title: string
+  description: string
+  link?: string
+}
+
+export interface IWorkSection {
+  tech: string
+  cards: IWorkCard[]
+}

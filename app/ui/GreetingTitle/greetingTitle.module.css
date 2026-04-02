@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  /* width: 100%; */
   height: 50%;
   max-width: 1294px;
   padding: 0 20px;
@@ -27,8 +27,9 @@
 }
 
 .technics {
+  --item-h: 100px;
   overflow: hidden;
-  height: 100px;
+  height: var(--item-h);
   text-align: center;
   position: relative;
   background-color: var(--transparent-white);
@@ -37,37 +38,20 @@
   box-shadow: inset 0px 40px 40px -10px var(--transparent-white);
 }
 
-.technicName {
-  display: block;
-  color: var(--white);
-  animation: technics-change 5s infinite;
+.technicsList {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--active-idx, 0) * -1 * var(--item-h, 100px)));
+  transition: transform 0.55s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
-@keyframes technics-change {
-  10% {
-    transform: translateY(-102%);
-  }
-  25% {
-    transform: translateY(-100%);
-  }
-  35% {
-    transform: translateY(-202%);
-  }
-  50% {
-    transform: translateY(-200%);
-  }
-  60% {
-    transform: translateY(-302%);
-  }
-  75% {
-    transform: translateY(-300%);
-  }
-  85% {
-    transform: translateY(-402%);
-  }
-  100% {
-    transform: translateY(-400%);
-  }
+.technicName {
+  flex-shrink: 0;
+  height: var(--item-h, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
 }
 
 .title {
@@ -110,7 +94,8 @@
 
 @media screen and (max-width: 1024px) {
   .technics {
-    height: 70px;
+    --item-h: 70px;
+    height: var(--item-h);
   }
 
   .technicsContainer div:first-child {
@@ -129,7 +114,8 @@
 
 @media screen and (max-width: 800px) {
   .technics {
-    height: 46px;
+    --item-h: 46px;
+    height: var(--item-h);
     border-radius: 10px;
     padding: 0 14px;
   }
@@ -151,7 +137,8 @@
 
 @media screen and (max-width: 500px) {
   .technics {
-    height: 53px;
+    --item-h: 53px;
+    height: var(--item-h);
   }
 
   .title {

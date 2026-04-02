@@ -1,9 +1,7 @@
 import { publicKeyId, serviceId, templateId } from '@config/email'
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
 
-import { ISendEmailParams } from './sendEmail.types'
-
-export const sendEmail = ({ from_name, from_email, title, message, phone }: ISendEmailParams) => {
+export const sendEmail = (from_name: string, from_email: string, phone: string, title: string, message: string) => {
   const templateParams = {
     from_name,
     from_email,
