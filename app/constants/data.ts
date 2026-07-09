@@ -1,69 +1,133 @@
+import CookingAIImage from '@images/cooking-ai-app.png'
+import IrregularVerbsImage from '@images/irregular-verbs-app.png'
+import PlantsImage from '@images/plants-app.png'
+import PortfolioImage from '@images/portfolio-app.png'
+import SpeechScribeImage from '@images/speechscribe-audio-app.png'
+import TaskManagerImage from '@images/task-manager-app.png'
+
+// import CoincapImage from '@images/coincap-app.png'
 import { IEducationCards, IExperienceCard, ITechniquesOptions, IWorkSection } from './types/data.types'
 
-export const SECTIONIDS: string[] = ['greeting', 'experience', 'skills', 'works', 'contacts']
+export const SECTIONIDS: string[] = ['greeting', 'experience', 'skills', 'ai', 'works', 'contacts']
 
-export const TECHNIC_TITLES: string[] = ['JavaScript', 'TypeScript', 'React', 'React Native', 'Next.js', 'Angular', 'Node.js']
+export const TECHNIC_TITLES: string[] = ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Angular', 'Node.js', 'MongoDB']
 
 export const EXPERIENCE_CARDS: IExperienceCard[] = [
   {
+    id: 0,
+    name: 'Blockchain Labs Team',
+    link: 'https://www.linkedin.com/company/blockchain-labs-team/',
+    duration: 'september 2025 – present',
+    description:
+      'Developing frontend for a web application (partner/CPA platform with registration, authentication, profiles, and' +
+      ' newsletters) using React PWA and TypeScript stack. Contributing to PWA CRA React app implementation: forms, UI' +
+      ' components, API integrations, newsletter creation, and 2FA/SMS/email authentication. Focus on security, statement' +
+      ' editing/creation, and animated landing page development.',
+    responsibilities: [
+      'Creating reusable UI React components with MUI',
+      'Integrated HTTP client and interceptors for authentication, centralized error handling, and retry logic. Used' +
+        ' react-hook-form and form validation, error handling and localization.',
+      'Animated landing page using GSAP.',
+      'Developing cross-browser email newsletters.'
+    ],
+    team: ['1 TL', '1 UX/UI', '1 FE', '1BE', '1 BA', '1 SA', '1 PM', '1 QA', '1 InfoSec', '1 DevOps']
+  },
+  {
     id: 1,
-    name: 'GSU-AI',
-    link: 'https://cooking.alivio.ai/',
-    duration: 'June 2024 – present',
-    description: [
-      'On a project using microservice architecture, participated in the development of the overall structure of the application from the start. ',
-      'I participate in the creation of basic functions, variables and components in the application core. ',
-      'I am involved in application navigation and ui development',
-      'Responsible for the development of a mobile application. ',
-      'I rewrite web components for mobile ones, conduct onboarding and code reviews for new programmers on a React Native project'
+    name: 'Volt X',
+    link: 'https://www.yourvoltx.com/',
+    duration: 'August 2024 – December 2025',
+    description:
+      'I specialize in building scalable and reliable interfaces for ERP, CRM, MES, HCM systems using Next.js, TypeScript,' +
+      ' React, Ant Design, and other modern frontend tools. My experience covers the full spectrum of UI development — from' +
+      ' architectural design to implementing business logic and integrating with backend APIs (REST / Supabase / Firebase).',
+    responsibilities: [
+      'My role in the project involves handling architectural decisions (we use either a microservice or atomic application architecture)',
+      'Managing the processing of imported and exported files within the system — specifically, validating imported files' +
+        ' according to required system formats, storing projects, and displaying them in tables. I’m also responsible for table' +
+        ' analytics presented as charts.',
+      'Optimize performance, SSR, and routing in Next.js applications',
+      'Set up authentication (Google, Microsoft, Supabase Auth, etc.)',
+      'Develop tables, forms, filters, and navigation in large-scale interfaces'
     ],
-    products: [
-      {
-        id: 1,
-        name: '"cooking-ai" React app',
-        link: 'https://cooking.alivio.ai/'
-      }
-    ],
-    team: ['PM', 'GD']
+    team: ['1 SA', '1 TL', '1 UX/UI', '1 FE', '2 BE', '2 ML']
   },
   {
     id: 2,
-    name: 'Milestep',
-    link: 'https://milestep.io/',
-    duration: 'February 2024 – June 2024',
-    description: [
-      'Web application on React for tracking logistics deliveries. ',
-      'Displayed a large amount of data using react-admin tables. I developed the front from scratch. ',
-      'Communicating with the backend, developed the frontend client and admin sides of the application'
+    name: 'Alivio-AI',
+    link: 'https://www.alivio.ai/',
+    duration: 'June 2024 – January 2025',
+    description:
+      'Worked on two AI-powered products — a travel management platform (Angular) and a web & mobile recipe generation app (React / React Native).' +
+      ' The cooking-ai mobile application built with React Native fully replicates the web version developed in React' +
+      ' The travel-ai application provides role-based access and ensures secure authentication',
+    responsibilities: [
+      'Divided applications into modules, implemented authorization and routing',
+      'Integrated APIs with filtering and grouping of data',
+      'Built microservice architecture from scratch',
+      'Developed mobile application in React Native, adapting web components for mobile',
+      'Conducted onboarding and code reviews for new developers'
     ],
-    products: [{ id: 1, name: 'Web application for optimizing logistics supplies in React-Admin' }],
-    team: ['PM', 'GD']
+    team: ['1 PO', '1 TL', '1 PM', '1 BA', '2 UX/UI', '2 FE', '3 BE', '3 QA'],
+    products: [{ id: 1, name: 'cooking-ai React app', link: 'https://cooking.alivio.ai/' }]
   },
   {
     id: 3,
+    name: 'Milestep',
+    link: 'https://milestep.io/',
+    duration: 'February 2024 – June 2024',
+    description:
+      'A web application for tracking, sorting, and shipping warehouse supplies. The app included a table with all products from ' +
+      'suppliers, along with full delivery information and s`tatus. Users with different access levels had to update box statuses by ' +
+      'recording the required data at each stage. The final stage triggered the process of sending a set of boxes to sellers.',
+    responsibilities: [
+      'Web application on React for tracking logistics deliveries. Displayed a large amount of data using react-admin tables.' +
+        ' I developed the front from scratch',
+      'Communicating with the backend, developed the frontend client and admin sides of the application.'
+    ],
+    team: ['1 PO', '1 TL', '1 BA', '1 FE', '2 BE', '1 QA']
+  },
+  {
+    id: 4,
     name: 'Taqtile',
     link: 'https://taqtile.com/',
     duration: 'September 2023 – April 2024',
-    description: [
-      'Разрабатывала пользовательские интерфейсы для веб и мобильных приложений, улучшая их функциональность и удобство. ',
-      'Реализовывала и оптимизировала сложные формы, анимации и навигацию для улучшения UX/UI. Интегрировала Google Firebase, базы данных компании',
-      ' и SEO-оптимизацию. Исправляла ошибки и повышала стабильность приложений, обеспечивая высокое качество и производительность продуктов.'
+    description:
+      'Contributed to five web and mobile products built with React, React Native, and Next.js. Work spanned AI-powered wellness and posture' +
+      'tracking apps with ML integration, a Chrome extension for audio transcription, and two English learning apps with gamification' +
+      'and subscription features.',
+    responsibilities: [
+      'Designed user interfaces for web and mobile applications, enhancing their functionality and usability.',
+      'Implemented and optimised complex forms, animations and navigation to improve the UX/UI.',
+      'Integrated Google Firebase, company databases and SEO optimisation.',
+      'Debugged and improved application stability, ensuring high product quality and performance.'
     ],
     products: [
-      { id: 1, name: '"HealthUApp" Next.js app', link: 'https://healthuapp.com/' },
       {
-        id: 2,
+        id: 0,
         name: '"SpeechScribe audio" chrome extension in Next.js',
         link: 'https://chromewebstore.google.com/detail/speechscribe-audio-z-d%C5%BAwi/gijnkelbkbmaekkkgoalpimggbmoahol?hl=pl'
       },
-      { id: 3, name: '"Irregular verbs" React Native app', link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704' },
-      { id: 4, name: '"Posture" Ionic app', link: 'https://play.google.com/store/apps/details?id=io.ionic.posture&hl=en_US&pli=1' }
+      { id: 1, name: '"Irregular verbs" React Native app', link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704' },
+      { id: 2, name: '"Posture" Ionic app', link: 'https://play.google.com/store/apps/details?id=io.ionic.posture&hl=en_US&pli=1' }
     ],
-    team: ['PM', 'GD']
+    team: ['1 PM', '1 UX/UI', '3 FE', '2 BE', '1 QA', '1 DevOps']
   }
 ]
 
 export const EDUCATION_CARDS: IEducationCards[] = [
+  {
+    id: 0,
+    name: 'AWS Cloud Practitioner',
+    organization: 'AWS',
+    organizationLink: 'https://bsu.by/',
+    certificateLink: '',
+    description:
+      'Completed the AWS Cloud Practitioner Essentials course, covering core cloud concepts, AWS global infrastructure, compute, ' +
+      'networking, storage, databases, security, monitoring, and cloud economics. Gained practical understanding of key AWS services including ' +
+      'EC2, Lambda, S3, RDS, IAM, and CloudWatch, as well as cloud migration strategies and the Well-Architected Framework.',
+    date: '2026'
+  },
   {
     id: 1,
     name: 'Angular the rolling scope school course',
@@ -81,7 +145,7 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     name: 'JavaScript and React course',
     organization: 'TeachMeSkills',
     organizationLink: 'https://teachmeskills.by/',
-    certificateLink: '',
+    certificateLink: 'https://drive.google.com/file/d/1_eCjKxE3ahGqSZjoMzH9SE7Ab8oYkpDQ/view',
     description:
       'On this 7-month course I learned how to work with webpack and React library. Also I was introduced to ' +
       'Typescript. Developed a couple of SPA applications using these technologies',
@@ -120,7 +184,7 @@ export const TECHNIQUES_OPTIONS: ITechniquesOptions[] = [
 
 export const SKILLS_LIST: string[] = [
   'HTML, CSS',
-  'SCSS & SASS',
+  'SCSS',
   'Tailwind',
   'JavaScript',
   'React',
@@ -133,12 +197,27 @@ export const SKILLS_LIST: string[] = [
   'React Native',
   'Ionic',
   'Angular',
-  'Node.js'
+  'Node.js',
+  'TypeScript'
 ]
 
 export const DELAY_TIME: number = 3000
 
 export const WORKS_CARDS: IWorkSection[] = [
+  {
+    tech: 'HTML & CSS',
+    cards: [
+      {
+        id: 1,
+        title: 'Plants SPA',
+        description:
+          'AI-powered recipe generation SPA built at GSU-AI. Participated in app architecture ' +
+          'from the ground up — core components, navigation, and UI across a microservice setup.',
+        link: 'https://pixel-perfect-plants.vercel.app/',
+        image: PlantsImage
+      }
+    ]
+  },
   {
     tech: 'React',
     cards: [
@@ -148,21 +227,26 @@ export const WORKS_CARDS: IWorkSection[] = [
         description:
           'AI-powered recipe generation SPA built at GSU-AI. Participated in app architecture ' +
           'from the ground up — core components, navigation, and UI across a microservice setup.',
-        link: 'https://cooking.alivio.ai/'
+        link: 'https://cooking.alivio.ai/',
+        image: CookingAIImage
       },
       {
         id: 2,
-        title: 'Logistics Dashboard',
+        title: 'Coincap',
         description:
           'React & React-Admin web app for real-time tracking of logistics deliveries at Milestep. ' +
-          'Built the full frontend from scratch, covering both client and admin sides.'
+          'Built the full frontend from scratch, covering both client and admin sides.',
+        link: 'https://milestep.io/'
       },
       {
         id: 3,
-        title: 'Portfolio Website',
+        title: 'Task Manager',
         description:
-          'This portfolio itself — a dynamic single-page app with animated sections, a themed ' +
-          'color switcher, smooth scroll, and a contact form backed by a serverless API.'
+          'React SPA for managing tasks and projects. Features include task creation, assignment, ' +
+          'status tracking, and a Kanban-style board for visualizing workflow. Implemented with React, ' +
+          'Redux, and Material-UI.',
+        link: 'https://main.dkc52pnqxg4rx.amplifyapp.com/',
+        image: TaskManagerImage
       }
     ]
   },
@@ -171,21 +255,15 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'Cooking AI Mobile',
-        description:
-          'Mobile companion to the Cooking AI web app. Rewrote web components into native screens, ' +
-          'handled onboarding, and ran code reviews for new React Native developers.'
-      },
-      {
-        id: 2,
         title: 'Irregular Verbs',
         description:
           'English grammar learning app published on the Apple App Store. Features interactive ' +
           'verb drills and progress tracking built with React Native at Taqtile.',
-        link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704'
+        link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704',
+        image: IrregularVerbsImage
       },
       {
-        id: 3,
+        id: 2,
         title: 'Posture',
         description:
           'Health & posture monitoring mobile app available on Google Play. Developed within the ' +
@@ -211,14 +289,16 @@ export const WORKS_CARDS: IWorkSection[] = [
         description:
           'Chrome extension for audio transcription developed in Next.js at Taqtile. ' +
           'Handles real-time speech recognition and published to the Chrome Web Store.',
-        link: 'https://chromewebstore.google.com/detail/' + 'speechscribe-audio-z-d%C5%BAwi/gijnkelbkbmaekkkgoalpimggbmoahol?hl=pl'
+        link: 'https://chromewebstore.google.com/detail/' + 'speechscribe-audio-z-d%C5%BAwi/gijnkelbkbmaekkkgoalpimggbmoahol?hl=pl',
+        image: SpeechScribeImage
       },
       {
         id: 3,
         title: 'Portfolio (Next.js)',
         description:
           'This portfolio is powered by Next.js — leveraging the App Router, server components, ' +
-          'and a serverless email API to deliver a fast, SEO-friendly developer showcase.'
+          'and a serverless email API to deliver a fast, SEO-friendly developer showcase.',
+        image: PortfolioImage
       }
     ]
   },

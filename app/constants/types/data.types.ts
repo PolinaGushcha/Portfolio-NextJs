@@ -1,10 +1,13 @@
+import { StaticImageData } from 'next/image'
+
 export interface IExperienceCard {
   id: number
   name: string
   link: string
   duration: string
-  description: string[]
-  products: IExperienceProducts[]
+  description: string
+  responsibilities: string[]
+  products?: IExperienceProducts[]
   team: string[]
 }
 
@@ -35,6 +38,7 @@ export interface IWorkCard {
   title: string
   description: string
   link?: string
+  image?: StaticImageData
 }
 
 export interface IWorkSection {
