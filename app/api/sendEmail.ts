@@ -1,27 +1,16 @@
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
-import { publicKeyId, serviceId, templateId } from 'app/config/email.config'
+import { publicKeyId, serviceId, templateId } from '@config/email'
+import emailjs from '@emailjs/browser'
 
-export const sendEmail = (fullname: string, email: string, phone: string, technique: string, message: string) => {
+export const sendEmail = (from_name: string, from_email: string, phone: string, title: string, message: string) => {
   const templateParams = {
-    from_name: fullname,
-    from_email: email,
+    from_name,
+    from_email,
     to_name: 'Polina Hushcha',
     to_email: 'polina.hushcha@gmail.com',
-    title: technique,
-    message: message,
-    phone: phone
+    title,
+    message,
+    phone
   }
 
-  try {
-    emailjs.send(serviceId, templateId, templateParams, {
-      publicKey: publicKeyId
-    })
-  } catch (err) {
-    if (err instanceof EmailJSResponseStatus) {
-      console.log('EMAIL FAILED...', err)
-      return
-    }
-
-    console.log('ERROR', err)
-  }
+  return emailjs.send(serviceId, templateId, templateParams, { publicKey: publicKeyId })
 }

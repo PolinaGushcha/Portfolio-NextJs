@@ -1,0 +1,273 @@
+.works {
+  padding: 0px 0px 100px 0;
+  background-color: #212529;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* inner shadow only from the bottom */
+  box-shadow: inset 0 -40px 40px -10px #0000003f;
+}
+
+.container {
+  max-width: 1290px;
+  width: 100%;
+  padding: 0px 30px 0px 15px;
+}
+
+/* ── Section title ── */
+.titleText {
+  /* margin: 0 0 40px; */
+  font-size: 45px;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* ── Tab bar ── */
+.tabsContainer {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.tabs {
+  position: relative;
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 0;
+}
+
+.glade {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--baseBgGradientColor-1, #8850f7) 0%, rgba(136, 80, 247, 0.6) 100%);
+  transition:
+    left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  padding: 8px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tabText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.activeTab .tabText {
+  color: #ffffff;
+}
+
+/* ── Card animations ── */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.97);
+    filter: blur(6px);
+  }
+}
+
+/* ── Card grid ── */
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 380px));
+  justify-content: center;
+  gap: 20px;
+  min-height: 395px;
+}
+
+/* ── Individual card ── */
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  animation: cardEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.card:nth-child(2) {
+  animation-delay: 70ms;
+}
+.card:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.cardExiting .card {
+  animation: cardExit 0.22s ease-in both;
+  animation-delay: 0ms;
+}
+
+.card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(136, 80, 247, 0.2) 0%, var(--baseBgGradientColor-1, transparent) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.image {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(136, 80, 247, 0.3) 0%, rgba(255, 255, 255, 0.05) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.imageObject {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.cardBody {
+  padding: 18px 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cardDescription {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.cardLink {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--baseBgGradientColor-1, #8850f7);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cardLink:hover {
+  opacity: 0.75;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 1024px) {
+  .titleText {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* .works {
+    padding: 100px 0;
+  } */
+  .tabs {
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+  .glade {
+    display: none;
+  }
+  .tab {
+    border-radius: 50px;
+  }
+  .activeTab {
+    background: linear-gradient(90deg, var(--baseBgGradientColor-1, #8850f7) 0%, rgba(136, 80, 247, 0.6) 100%);
+  }
+  .activeTab .tabText {
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* .works {
+    padding: 0;
+  } */
+  .container {
+    padding: 0px 20px 40px;
+  }
+  .titleText {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+  .tabText {
+    font-size: 12px;
+  }
+  .tab {
+    padding: 6px 12px;
+  }
+  .cardContainer {
+    grid-template-columns: 1fr;
+  }
+  .text {
+    font-size: 14px;
+    max-width: none;
+    padding: 0 10px;
+  }
+}

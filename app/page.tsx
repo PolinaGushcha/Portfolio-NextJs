@@ -1,40 +1,42 @@
 'use client'
 
+import { AILover } from '@components/AILover'
+import { Contacts } from '@components/Contacts'
+import { Experience } from '@components/Experience'
 import { Greeting } from '@components/Greeting'
-import Loading from '@components/Loading'
-import { useEffect, useState } from 'react'
+import { Loading } from '@components/Loading'
+import { Navigation } from '@components/Navigation'
+import { Skills } from '@components/Skills'
+import SmoothScroll from '@components/SmoothScroll'
+import { Works } from '@components/Works'
+import Background from '@ui/Background'
+import { Folders } from '@ui/Folders'
+import { handleActiveLinkOnScroll } from '@utils/activeLinkOnScroll'
+import { useEffect } from 'react'
 
-import { Contacts, Experience, Footer, Home, Navigation, Skills, Work } from './components'
 import styles from './page.module.css'
 
 export default function Main() {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-
   useEffect(() => {
-    setIsLoading(!!sessionStorage.getItem('user'))
-    if (!sessionStorage.getItem('user')) {
-      setTimeout(() => {
-        sessionStorage.setItem('user', 'user')
-        setIsLoading(true)
-      }, 3000)
-    }
+    document.addEventListener('scroll', handleActiveLinkOnScroll)
   }, [])
 
   return (
     <>
-      {!isLoading && <Loading />}
-      <div className={styles.page}>
+      <Background />
+      <Loading />
+      <SmoothScroll>
+        <Folders />
         <Navigation />
-        <main>
+        <main className={styles.main}>
           <Greeting />
-          <Home />
           <Experience />
           <Skills />
-          <Work />
+          <AILover />
+          <Works />
           <Contacts />
         </main>
-        <Footer />
-      </div>
+      </SmoothScroll>
     </>
   )
 }

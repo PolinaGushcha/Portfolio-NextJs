@@ -6,7 +6,7 @@
   "rules": {
     "react/no-unescaped-entities": 0,
     "react-hooks/exhaustive-deps": "off",
-    "indent": ["error", 2],
+    // "indent": ["error", 2],
     "react/display-name": "off",
     "object-curly-spacing": ["error", "always"],
     "max-len": ["error", 150]

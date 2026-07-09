@@ -1,0 +1,72 @@
+@property --baseBgGradientColor-1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --baseBgGradientColor-2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --circlesColors00 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors01 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors10 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors11 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors20 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors21 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors30 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors31 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors40 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --circlesColors41 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --cursorGradientColor0 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --cursorGradientColor1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
