@@ -30,7 +30,7 @@ const SmoothScroll: React.FC<ISmoothScroll> = ({ children }) => {
         const targetElement = document.querySelector(target.hash) as HTMLElement
 
         if (targetElement) {
-          lenis?.scrollTo(targetElement)
+          lenis?.scrollTo(targetElement, { offset: -100 })
         }
       }
     }

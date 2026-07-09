@@ -2,9 +2,9 @@
 
 import { TECHNIC_TITLES } from '@constants/data'
 import DownloadIcon from '@icons/download.icon.svg'
+import GithubIcon from '@icons/github.icon.svg'
 import Gmail from '@icons/gmail.icon.svg'
 import LinkedIn from '@icons/linkedin.icon.svg'
-import Telegram from '@icons/telegram.icon.svg'
 import { Button } from '@ui/Button/'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -23,10 +23,7 @@ export const GreetingTitle = () => {
 
   // Advance one step every cycle
   useEffect(() => {
-    const timer = setInterval(
-      () => setActiveIdx(prev => prev + 1),
-      CYCLE_MS,
-    )
+    const timer = setInterval(() => setActiveIdx(prev => prev + 1), CYCLE_MS)
     return () => clearInterval(timer)
   }, [])
 
@@ -39,9 +36,7 @@ export const GreetingTitle = () => {
       setInstant(true)
       setActiveIdx(0)
       // Re-enable transition after the snap frame is painted
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => setInstant(false))
-      )
+      requestAnimationFrame(() => requestAnimationFrame(() => setInstant(false)))
     }, TRANSITION_MS)
     return () => clearTimeout(snap)
   }, [activeIdx])
@@ -53,14 +48,8 @@ export const GreetingTitle = () => {
           I am a frontend developer
           <div className={styles.technicsContainer}>
             <div>on</div>
-            <div
-              className={styles.technics}
-              style={{ '--active-idx': activeIdx } as React.CSSProperties}
-            >
-              <div
-                className={styles.technicsList}
-                style={instant ? { transition: 'none' } : undefined}
-              >
+            <div className={styles.technics} style={{ '--active-idx': activeIdx } as React.CSSProperties}>
+              <div className={styles.technicsList} style={instant ? { transition: 'none' } : undefined}>
                 {DISPLAY_ITEMS.map((el, id) => (
                   <span key={id} className={styles.technicName}>
                     {el}
@@ -71,11 +60,11 @@ export const GreetingTitle = () => {
           </div>
         </h1>
         <p className={styles.text}>
-          Junior Frontend developer on mobile and web applications with 1.5 years of experience. I develop both beautiful smooth animation of
-          interfaces and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and transportation.
+          Junior Frontend developer on mobile and web applications with more than 3 years of experience. I develop both beautiful smooth animation of
+          interfaces and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and management.
         </p>
         <div className={styles.mainLinks}>
-          <Link href='/files/CV_Frontend_Dev_Polina.pdf' download>
+          <Link href='/files/CV_Frontend_Dev_Polina.pdf' download target='_blank'>
             <Button icon={<DownloadIcon />} text={'Download CV'} />
           </Link>
           <ul className={styles.ul}>
@@ -90,8 +79,8 @@ export const GreetingTitle = () => {
               </Link>
             </li>
             <li className={styles.li}>
-              <Link href='https://t.me/PolinaGushcha' target='_blank'>
-                <Button icon={<Telegram />} />
+              <Link href='https://github.com/PolinaGushcha' target='_blank'>
+                <Button icon={<GithubIcon />} />
               </Link>
             </li>
           </ul>

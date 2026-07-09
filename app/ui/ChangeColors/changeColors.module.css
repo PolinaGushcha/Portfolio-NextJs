@@ -40,3 +40,9 @@
   outline: 1px solid var(--white);
   outline-offset: -7px;
 }
+
+@media screen and (max-width: 500px) {
+  .changeColorBtn {
+    font-size: 14px;
+  }
+}
