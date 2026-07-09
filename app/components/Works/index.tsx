@@ -1,7 +1,8 @@
 'use client'
 
-import { TECHNIC_TITLES, WORKS_CARDS } from '@constants/data'
+import { WORKS_CARDS } from '@constants/data'
 import clsx from 'clsx'
+import Image from 'next/image'
 import { useLayoutEffect, useRef, useState } from 'react'
 
 import styles from './works.module.css'
@@ -40,18 +41,21 @@ export const Works = () => {
     <section className={styles.works} id='works'>
       <div className={styles.container}>
         <h2 className={styles.titleText}>My works</h2>
+        <p className={styles.text}>
+          A mix of commercial products shipped through companies I've worked with, and personal projects built to showcase my range. From little web
+          and mobile apps platforms to bigger ones and Chrome extensions. Browse by stack, check my CV, or send me a message to learn more.
+        </p>
 
         <div className={styles.tabsContainer}>
           <div className={styles.tabs}>
-            <div
-              className={styles.glade}
-              style={{ left: `${gladeStyle.left}px`, width: `${gladeStyle.width}px` }}
-            />
-            {TECHNIC_TITLES.map((el, id) => (
+            <div className={styles.glade} style={{ left: `${gladeStyle.left}px`, width: `${gladeStyle.width}px` }} />
+            {WORKS_CARDS.map(el => el.tech).map((el, id) => (
               <div
                 className={clsx(styles.tab, selectedIndex === id && styles.activeTab)}
                 key={id}
-                ref={el => { tabRefs.current[id] = el }}
+                ref={el => {
+                  tabRefs.current[id] = el
+                }}
                 onClick={() => handleTabChange(id)}
               >
                 <p className={styles.tabText}>{el}</p>
@@ -63,7 +67,7 @@ export const Works = () => {
         <div className={clsx(styles.cardContainer, isExiting && styles.cardExiting)}>
           {activeCards.map(card => (
             <div className={styles.card} key={card.id}>
-              <div className={styles.image} />
+              <div className={styles.image}>{card.image ? <Image className={styles.imageObject} src={card.image} alt={card.title} /> : null}</div>
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
