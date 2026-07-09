@@ -13,6 +13,7 @@ import ReactNative from '@icons/reactnative.icon.svg'
 import ReduxIcon from '@icons/redux.icon.svg'
 import Sass from '@icons/sass.icon.svg'
 import Tailwind from '@icons/tailwind.icon.svg'
+import TypeScript from '@icons/typescript.icon.svg'
 
 export const skillsIconsArr = [
   <Htmlcss key={0} />,
@@ -29,5 +30,6 @@ export const skillsIconsArr = [
   <ReactNative key={11} />,
   <Ionic key={12} />,
   <Angular key={13} />,
-  <NodeJs key={14} />
+  <NodeJs key={14} />,
+  <TypeScript key={15} />
 ]

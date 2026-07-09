@@ -1,241 +1,145 @@
 @import '../../constants/colors-properties.module.css';
 
-/* ── Section ── */
 .skills {
   background-color: #212529;
-  padding: 100px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  /* min-height: 535px; */
-  min-height: 50vh;
+  padding: 15px 0;
 }
-
 .container {
   max-width: 1290px;
   width: 100%;
-  padding: 0 30px 0 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 52px;
+  padding: 0px 30px 0px 15px;
 }
-
-/* ── Heading ── */
 .title {
-  margin: 0 0 14px;
+  color: white;
   font-size: 45px;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to right, var(--baseBgGradientColor-1) 0%, #ffffff 100%);
-  width: fit-content;
-  text-align: center;
   transition-property: --baseBgGradientColor-1;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+  text-align: center;
 }
-
 .text {
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 15px;
-  max-width: 480px;
-  line-height: 1.6;
-  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin-top: 20px;
 }
-
-/* ── Carousel wrapper ── */
-.carouselWrapper {
-  position: absolute;
-  bottom: 0;
+.skillsList {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  /* grid-template-rows: repeat(2, 1fr);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column; */
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  /* fade edges to black so scroll vanishes into the background */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  gap: 10px;
 }
-
-.row {
-  overflow: hidden;
-}
-
-/* ── Scroll keyframes ── */
-@keyframes scrollLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scrollRight {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-/* ── Tracks ── */
-.track,
-.trackReverse {
-  display: flex;
-  gap: 14px;
-  width: max-content;
-  will-change: transform;
-}
-
-.track {
-  animation: scrollLeft 28s linear infinite;
-}
-
-.trackReverse {
-  animation: scrollRight 20s linear infinite;
-}
-
-/* pause whichever row is hovered */
-.row:hover .track,
-.row:hover .trackReverse {
-  animation-play-state: paused;
-}
-
-/* ── Card ── */
 .card {
-  flex-shrink: 0;
-  width: 130px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  padding: 22px 12px 18px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  /* inner shadow only from the bottom */
+  /* box-shadow: inset 0 -40px 40px -10px #ffffff3f; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
-  position: relative;
-  overflow: hidden;
-  cursor: default;
-  transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
+  justify-content: space-between;
+  /* outline: 2px solid transparent; */
+  width: 100%;
+  transition: all 0.4s ease-in-out;
 }
 
-/* radial glow on hover */
 .card::before {
+  border-radius: 10px;
   content: '';
+  width: 100%;
+  height: 100%;
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 65%, rgba(136, 80, 247, 0.25) 0%, transparent 70%);
+  background: linear-gradient(180deg, var(--baseBgGradientColor-1) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
 }
-
 .card:hover {
-  transform: translateY(-6px) scale(1.04);
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(136, 80, 247, 0.4);
-  box-shadow:
-    0 0 0 1px rgba(136, 80, 247, 0.2),
-    0 14px 36px rgba(0, 0, 0, 0.35),
-    0 0 28px rgba(136, 80, 247, 0.14);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.32);
+}
+.card:hover::before {
+  opacity: 0.25;
 }
 
-.card:hover::before {
+.card > svg {
+  width: 60%;
+  height: 60%;
+  margin-bottom: 10px;
+  filter: contrast(15%);
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+}
+
+.name {
+  max-width: 100px;
+  text-align: center;
+  color: white;
+  opacity: 0.3;
+  font-weight: 400;
+  transition: all 0.4s ease-in-out;
+}
+
+.card:hover > svg {
+  filter: contrast(100%);
+  transform: scale(1.05);
+}
+.card:hover > .name {
+  font-weight: 500;
   opacity: 1;
 }
 
-/* ── Icon wrapper ── */
-.iconWrap {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-  position: relative;
-}
-
-.card:hover .iconWrap {
-  background: rgba(136, 80, 247, 0.14);
-  border-color: rgba(136, 80, 247, 0.3);
-  transform: scale(1.1);
-}
-
-.iconWrap > svg {
-  width: 30px;
-  height: 30px;
-  filter: saturate(0) brightness(1.5);
-  transition: filter 0.35s ease;
-}
-
-.card:hover .iconWrap > svg {
-  filter: saturate(1) brightness(1);
-}
-
-/* ── Skill name ── */
-.name {
-  font-size: 11px;
-  font-weight: 500;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.38);
-  transition: color 0.3s ease;
-  line-height: 1.3;
-  position: relative;
-}
-
-.card:hover .name {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-/* ── Responsive ── */
 @media screen and (max-width: 1024px) {
   .title {
     font-size: 36px;
   }
+  .skillsList {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* .skillsList {
+    grid-template-rows: repeat(5, 1fr);
+  } */
+  .skillsList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .skills {
-    padding: 60px 0;
-  }
-  .container {
-    padding: 0 20px;
-    margin-bottom: 36px;
-  }
-  .title {
-    font-size: 28px;
+  /* .skillsList {
+    grid-auto-flow: row;
   }
   .card {
-    width: 110px;
-    padding: 18px 10px 14px;
+    height: 100%;
+  } */
+  .skillsList {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 30px;
   }
-  .iconWrap {
-    width: 42px;
-    height: 42px;
+  .card {
+    padding: 12px 6px;
+    border-radius: 8px;
   }
-  .iconWrap > svg {
-    width: 24px;
-    height: 24px;
+  .name {
+    font-size: 11px;
+    max-width: none;
   }
-  .track {
-    animation-duration: 18s;
+  .title {
+    font-size: 24px;
   }
-  .trackReverse {
-    animation-duration: 14s;
+  .text {
+    font-size: 14px;
+    max-width: none;
+    padding: 0 10px;
   }
 }
