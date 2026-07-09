@@ -1,0 +1,48 @@
+.changeColorBtn {
+  color: var(--white);
+  padding: 6 15;
+  border-radius: 25;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.changeColorBtn:hover {
+  box-shadow: 0px 8px 20px -12px var(--black);
+}
+
+.colorsList {
+  position: absolute;
+  top: 80;
+  z-index: 5;
+  background-color: var(--white);
+  padding: 5 20 15;
+  border-radius: 10;
+  box-shadow: 0px 16px 30px -7px var(--darkGray-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+.colorsListClosed {
+  opacity: 1;
+  visibility: visible;
+}
+.colorBtn {
+  width: 138px;
+  height: 36px;
+  border-radius: 25px;
+  margin-top: 10;
+  cursor: pointer;
+}
+
+.activeBtn {
+  box-shadow: 0px 10px 30px -7px var(--black);
+  outline: 1px solid var(--white);
+  outline-offset: -7px;
+}
+
+@media screen and (max-width: 500px) {
+  .changeColorBtn {
+    font-size: 14px;
+  }
+}

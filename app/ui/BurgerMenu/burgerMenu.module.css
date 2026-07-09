@@ -1,0 +1,42 @@
+.hamburgerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: max-content;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hamburgerMenu::before,
+.hamburgerMenu::after,
+.hamburgerMenu input {
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: var(--black);
+  border-radius: 6px;
+  transform-origin: left center;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburgerMenu input {
+  appearance: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.hamburgerMenu:has(input:checked)::before {
+  rotate: 45deg;
+  translate: 0px -3.5px;
+}
+.hamburgerMenu:has(input:checked)::after {
+  rotate: -45deg;
+  translate: 0px 3.5px;
+}
+
+.hamburgerMenu input:checked {
+  opacity: 0;
+  width: 0;
+}

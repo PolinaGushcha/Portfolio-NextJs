@@ -13,13 +13,25 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@api/*": ["app/api/*"],
+      "@components/*": ["app/components/*"],
+      "@config/*": ["app/config/*"],
+      "@constants/*": ["app/constants/*"],
+      "@fonts/*": ["app/fonts/*"],
+      "@store/*": ["app/store/*"],
+      "@ui/*": ["app/ui/*"],
+      "@utils/*": ["app/utils/*"],
+      "@icons/*": ["public/icons/*"],
+      "@images/*": ["public/images/*"],
+      "@backgroundFolders/*": ["public/backgroundFolders/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

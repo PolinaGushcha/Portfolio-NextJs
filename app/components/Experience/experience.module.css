@@ -1,0 +1,378 @@
+.experience {
+  padding: 100px 0;
+  background-color: #212529;
+  min-height: 80vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 40px 40px -10px #0000003f;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  max-width: 1290px;
+  width: 100%;
+  padding: 0px 30px 0px 15px;
+}
+
+.article {
+  width: 50%;
+}
+
+/* ── Section title ── */
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.title > svg {
+  width: 60px;
+  height: 60px;
+}
+
+.titleText {
+  margin: 0;
+  font-size: 45px;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+/* ── Timeline ── */
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.cardWrapper {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.cardWrapper:last-child {
+  padding-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -30px;
+  top: 0px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--baseBgGradientColor-1, #8850f7);
+  border: 2px solid #212529;
+  box-shadow: 0 0 0 3px rgba(136, 80, 247, 0.22);
+  z-index: 1;
+  transition-property: --baseBgGradientColor-1;
+  transition-duration: 1s;
+}
+
+/* ── Card ── */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  padding: 18px 22px 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: default;
+  transition:
+    /* transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), */
+    box-shadow 0.5s ease,
+    border-color 0.4s ease;
+}
+
+/* hover gradient overlay */
+.card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--baseBgGradientColor-1) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.cardOpen {
+  /* transform: translateY(-5px); */
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cardOpen::before {
+  opacity: 0.25;
+}
+
+/* ── Details toggle button ── */
+.hoverHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 3px 10px;
+  background: none;
+  border: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: color 0.35s ease;
+}
+
+.hoverHint:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hoverHint::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cardOpen .hoverHint::after {
+  transform: rotate(-135deg) translateY(1px);
+}
+
+/* ── Details panel (hidden until open) ── */
+.detailsPanel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    /* max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), */
+    max-height 0.7s ease-in-out,
+    opacity 0.5s ease 0.15s;
+}
+
+.cardOpen .detailsPanel {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* ── Description ── */
+.cardDescription {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+  max-height: 4.8em; /* 3 lines × 1.6 line-height */
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardOpen .cardDescription {
+  max-height: 20em;
+}
+
+/* ── Date badge ── */
+.cardTime {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--baseBgGradientColor-1);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  position: relative;
+  transition-property: --baseBgGradientColor-1;
+  transition-duration: 1s;
+}
+
+/* ── Card title & links ── */
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  position: relative;
+}
+
+.link {
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--baseBgGradientColor-1);
+  transition: text-decoration-color 0.4s ease;
+}
+
+/* ── Description list ── */
+.cardTextList {
+  margin: 12px 0 12px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.cardTextList li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.55;
+  text-align: left;
+  margin: 0;
+}
+
+/* plain paragraph variant for education */
+.cardText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.55;
+  margin: 0 0 12px;
+  position: relative;
+}
+
+/* ── Product chips ── */
+.projectsTitle {
+  color: white;
+}
+
+/* .appsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+  position: relative;
+} */
+
+.appsLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 10px 0px;
+  display: block;
+  position: relative;
+}
+
+.appChip {
+  /* font-size: 11px;
+  font-weight: 500; */
+  color: white;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--baseBgGradientColor-1);
+  /* background: rgba(255, 255, 255, 0.07); */
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  /* border-radius: 50px; */
+  padding: 0px 11px;
+  /* text-decoration: none; */
+  transition: text-decoration-color 0.4s ease;
+  display: inline-block;
+}
+
+/* ── Certification link ── */
+.certLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--baseBgGradientColor-1);
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.2s ease;
+  transition-property: color, opacity, --baseBgGradientColor-1;
+  transition-duration: 0.4s, 0.2s, 1s;
+}
+
+.certLink:hover {
+  opacity: 0.7;
+}
+
+.divider {
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 1024px) {
+  .titleText {
+    font-size: 36px;
+  }
+  .cardTitle {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .experience {
+    padding: 100px 0;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .article {
+    width: 80%;
+    margin-top: 0px;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+    margin: 30px 0px 20px 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .experience {
+    padding: 0px;
+  }
+  .container {
+    padding: 70px 20px 40px;
+  }
+  .article {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .title > svg {
+    width: 40px;
+    height: 40px;
+  }
+  .titleText {
+    font-size: 24px;
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+  .cardTime {
+    font-size: 10px;
+  }
+  .cardTextList li,
+  .cardText {
+    font-size: 13px;
+  }
+}

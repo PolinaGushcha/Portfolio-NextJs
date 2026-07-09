@@ -1,0 +1,178 @@
+.container {
+  /* width: 100%; */
+  height: 50%;
+  max-width: 1294px;
+  padding: 0 20px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+
+.technicsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.technicsContainer div {
+  margin: 0 0;
+}
+
+.technicsContainer div:first-child {
+  margin-right: 30px;
+}
+
+.technics {
+  --item-h: 100px;
+  overflow: hidden;
+  height: var(--item-h);
+  text-align: center;
+  position: relative;
+  background-color: var(--transparent-white);
+  border-radius: 20px;
+  padding: 0 20px;
+  /* inner shadow only from the bottom */
+  box-shadow: inset 0 -40px 40px -10px var(--transparent-white);
+}
+
+.technicsList {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--active-idx, 0) * -1 * var(--item-h, 100px)));
+  transition: transform 0.55s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.technicName {
+  flex-shrink: 0;
+  height: var(--item-h, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.title {
+  text-align: center;
+  font-size: 70px;
+  line-height: 90px;
+  color: var(--white);
+  padding: 0 40px;
+}
+
+.text {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-right: 40px;
+  color: var(--white);
+}
+
+.mainLinks {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.mainLinks a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.li {
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .technics {
+    --item-h: 70px;
+    height: var(--item-h);
+  }
+
+  .technicsContainer div:first-child {
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 68px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .technics {
+    --item-h: 46px;
+    height: var(--item-h);
+    border-radius: 10px;
+    padding: 0 14px;
+  }
+
+  .technicsContainer div:first-child {
+    margin-right: 10px;
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 44px;
+    padding-left: 0;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .technics {
+    --item-h: 53px;
+    height: var(--item-h);
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 54px;
+    padding-right: 0;
+  }
+
+  .text {
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .mainLinks {
+    flex-direction: column;
+  }
+
+  .mainLinks div,
+  .ul {
+    margin: 0 0;
+    /* max-width: 300; */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .li {
+    margin: 65px 15px 0 15px;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .technicsContainer {
+    flex-direction: column;
+    max-width: 247px;
+  }
+}
