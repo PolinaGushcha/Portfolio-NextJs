@@ -12,6 +12,7 @@ import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { toast } from 'sonner'
 
 import styles from './contacts.module.css'
 import { IContacts } from './types'
@@ -22,7 +23,7 @@ export const Contacts = () => {
     reset,
     setValue,
     handleSubmit,
-    formState: { errors }
+    formState: { errors, isSubmitting }
   } = useForm<IContacts>({
     resolver: yupResolver(schema),
     mode: 'onChange'
@@ -30,11 +31,16 @@ export const Contacts = () => {
 
   const [phoneInput, setPhoneInput] = useState('')
 
-  const onSubmit: SubmitHandler<IContacts> = (data: IContacts) => {
+  const onSubmit: SubmitHandler<IContacts> = async (data: IContacts) => {
     const fullname = `${data.firstName} ${data.lastName}`
-    setPhoneInput('')
-    sendEmail(fullname, data.email, data.phone, data.technique, data.message)
-    reset()
+    try {
+      await sendEmail(fullname, data.email, data.phone, data.technique, data.message)
+      toast.success('Message sent!', { description: "I'll get back to you as soon as possible." })
+      setPhoneInput('')
+      reset()
+    } catch {
+      toast.error('Something went wrong.', { description: 'Please try again or contact me directly.' })
+    }
   }
 
   return (
@@ -80,7 +86,7 @@ export const Contacts = () => {
                     setValue('phone', phone)
                   }}
                   buttonStyle={{ paddingRight: 8 }}
-                  inputStyle={{ marginLeft: 10, width: '95%' }}
+                  inputStyle={{ marginLeft: 10, width: '100%' }}
                 />
                 <p className={styles.errorMessage}>{errors.phone && errors.phone.message}</p>
               </div>
@@ -102,8 +108,8 @@ export const Contacts = () => {
             <textarea className={clsx(styles.input, styles.messageInput)} id='message' placeholder='Message' {...register('message')} />
             <p className={styles.errorMessage}>{errors.message && errors.message.message}</p>
           </div>
-          <button className={styles.submitBtn} type='submit'>
-            Send message
+          <button className={clsx(styles.submitBtn, isSubmitting && styles.submitBtnLoading)} type='submit' disabled={isSubmitting}>
+            {isSubmitting ? <span className={styles.spinner} /> : 'Send message'}
           </button>
         </form>
 

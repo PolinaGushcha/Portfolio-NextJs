@@ -1,5 +1,5 @@
 import { publicKeyId, serviceId, templateId } from '@config/email'
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 
 export const sendEmail = (from_name: string, from_email: string, phone: string, title: string, message: string) => {
   const templateParams = {
@@ -12,16 +12,5 @@ export const sendEmail = (from_name: string, from_email: string, phone: string, 
     phone
   }
 
-  try {
-    emailjs.send(serviceId, templateId, templateParams, {
-      publicKey: publicKeyId
-    })
-  } catch (err) {
-    if (err instanceof EmailJSResponseStatus) {
-      console.error('EMAIL FAILED...', err)
-      return
-    }
-
-    console.error('ERROR', err)
-  }
+  return emailjs.send(serviceId, templateId, templateParams, { publicKey: publicKeyId })
 }
