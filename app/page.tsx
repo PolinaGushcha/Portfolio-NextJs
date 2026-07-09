@@ -1,5 +1,6 @@
 'use client'
 
+import { AILover } from '@components/AILover'
 import { Contacts } from '@components/Contacts'
 import { Experience } from '@components/Experience'
 import { Greeting } from '@components/Greeting'
@@ -31,6 +32,7 @@ export default function Main() {
           <Greeting />
           <Experience />
           <Skills />
+          <AILover />
           <Works />
           <Contacts />
         </main>

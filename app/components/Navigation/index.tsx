@@ -52,6 +52,11 @@ export const Navigation: React.FC = () => {
             </Link>
           </li>
           <li className={styles.navLi}>
+            <Link className={`navItem ${styles.navA}`} href='#ai'>
+              AI
+            </Link>
+          </li>
+          <li className={styles.navLi}>
             <Link className={`navItem ${styles.navA}`} href='#works'>
               Works
             </Link>
