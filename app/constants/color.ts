@@ -2,64 +2,75 @@ import { IBackgroundColorsPalette, PaletteColor } from './types/colors.types'
 
 export const BACKGROUNDCOLORSPALETTE: IBackgroundColorsPalette = {
   [PaletteColor.RED]: {
-    baseBgGradientColor_1: '#FAA613',
-    baseBgGradientColor_2: '#E3725D',
+    baseBgGradientColor_1: '#FF4D4F',
+    baseBgGradientColor_2: '#FF9A56',
     circlesColors: [
-      'rgba(139, 0, 2, 0.8)',
-      'rgba(139, 0, 2, 0)',
-      'rgba(175, 6, 0, 0.8)',
-      'rgba(175, 6, 0, 0)',
-      'rgba(157, 173, 131, 0.8)',
-      'rgba(157, 173, 131, 0)',
-      'rgba(243, 163, 97, 0.8)',
-      'rgba(243, 163, 97, 0)',
-      'rgba(255, 252, 208, 0.8)',
-      'rgba(255, 252, 208, 0)'
+      'rgba(255,77,79,0.9)',
+      'rgba(255,77,79,0)',
+      'rgba(255,154,86,0.9)',
+      'rgba(255,154,86,0)',
+      'rgba(255,220,170,0.9)',
+      'rgba(255,220,170,0)',
+      'rgba(198,96,82,0.9)',
+      'rgba(198,96,82,0)',
+      'rgba(255,235,220,0.9)',
+      'rgba(255,235,220,0)'
     ],
-    cursorGradientColor1: 'rgba(255, 252, 208, 0.8)',
-    cursorGradientColor2: 'rgba(255, 252, 208, 0)'
+    cursorGradientColor1: 'rgba(255,77,79,0.95)',
+    cursorGradientColor2: 'rgba(255,77,79,0)'
   },
   [PaletteColor.GREEN]: {
-    baseBgGradientColor_1: '#69AD54',
-    baseBgGradientColor_2: '#003C00',
+    baseBgGradientColor_1: '#16A34A',
+    baseBgGradientColor_2: '#A3E635',
     circlesColors: [
-      'rgba(185, 239, 0, 0.8)',
-      'rgba(185, 239, 0, 0)',
-      'rgba(51, 146, 3, 0.8)',
-      'rgba(51, 146, 3, 0)',
-      'rgba(255, 238, 0, 0.8)',
-      'rgba(255, 238, 0, 0)',
-      'rgba(15, 1, 103, 0.8)',
-      'rgba(15, 1, 103, 0)',
-      'rgba(45, 244, 201, 0.8)',
-      'rgba(45, 244, 201, 0)'
+      'rgba(22,163,74,0.9)',
+      'rgba(22,163,74,0)',
+      'rgba(163,230,53,0.9)',
+      'rgba(163,230,53,0)',
+      'rgba(198,255,193,0.9)',
+      'rgba(198,255,193,0)',
+      'rgba(34,197,94,0.9)',
+      'rgba(34,197,94,0)',
+      'rgba(56,189,248,0.9)',
+      'rgba(56,189,248,0)'
     ],
-    cursorGradientColor1: 'rgba(197, 255, 0, 0.8)',
-    cursorGradientColor2: 'rgba(197, 255, 0, 0)'
+    cursorGradientColor1: 'rgba(22,163,74,0.95)',
+    cursorGradientColor2: 'rgba(22,163,74,0)'
   },
   [PaletteColor.BLUE]: {
-    baseBgGradientColor_1: '#2222DD',
-    baseBgGradientColor_2: '#C8F8FF',
+    baseBgGradientColor_1: '#06B6D4',
+    baseBgGradientColor_2: '#0891B2',
     circlesColors: [
-      'rgba(15, 1, 103, 0.8)',
-      'rgba(15, 1, 103, 0)',
-      'rgba(222, 96, 254, 0.8)',
-      'rgba(222, 96, 254, 0)',
-      'rgba(255, 193, 0, 0.8)',
-      'rgba(255, 193, 0, 0)',
-      'rgba(15, 1, 103, 0.8)',
-      'rgba(15, 1, 103, 0)',
-      'rgba(200, 248, 255, 0.8)',
-      'rgba(200, 248, 255, 0)'
+      'rgba(6,182,212,0.9)',
+      'rgba(6,182,212,0)',
+      'rgba(34,211,238,0.9)',
+      'rgba(34,211,238,0)',
+      'rgba(124,58,237,0.9)',
+      'rgba(124,58,237,0)',
+      'rgba(192,246,255,0.9)',
+      'rgba(192,246,255,0)',
+      'rgba(14,165,233,0.9)',
+      'rgba(14,165,233,0)'
     ],
-    cursorGradientColor1: 'rgba(130, 35, 136, 0.8)',
-    cursorGradientColor2: 'rgba(130, 35, 136, 0)'
+    cursorGradientColor1: 'rgba(6,182,212,0.95)',
+    cursorGradientColor2: 'rgba(6,182,212,0)'
   },
   [PaletteColor.PURPLE]: {
-    baseBgGradientColor_1: '#6c00a2',
-    baseBgGradientColor_2: '#001152',
-    circlesColors: ['#1271ffcc', '#1271ff00', '#dd4affcc', '#dd4aff00', '#64dcffcc', '#64dcff00', '#c83232cc', '#c8323200', '#b4b432cc', '#b4b43200'],
-    cursorGradientColor1: 'rgba(140, 100, 255, 0.8)',
-    cursorGradientColor2: 'rgba(140, 100, 255, 0)'
+    baseBgGradientColor_1: '#D946EF',
+    baseBgGradientColor_2: '#7C3AED',
+    circlesColors: [
+      'rgba(217,70,239,0.95)',
+      'rgba(217,70,239,0)',
+      'rgba(249,115,22,0.9)',
+      'rgba(249,115,22,0)',
+      'rgba(99,102,241,0.9)',
+      'rgba(99,102,241,0)',
+      'rgba(255,193,7,0.9)',
+      'rgba(255,193,7,0)',
+      'rgba(236,72,153,0.9)',
+      'rgba(236,72,153,0)'
+    ],
+    cursorGradientColor1: 'rgba(217,70,239,0.95)',
+    cursorGradientColor2: 'rgba(217,70,239,0)'
   }
 }
