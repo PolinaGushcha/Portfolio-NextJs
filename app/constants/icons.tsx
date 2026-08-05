@@ -1,8 +1,8 @@
 import Angular from '@icons/angular.icon.svg'
+import AWS from '@icons/aws.icon.svg'
 import FramerMotion from '@icons/framerMotion.icon.svg'
 import Gsap from '@icons/gsap.icon.svg'
 import Htmlcss from '@icons/htmlcss.icon.svg'
-import Ionic from '@icons/ionic.icon.svg'
 import JavaScript from '@icons/javascript.icon.svg'
 import MobXIcon from '@icons/mobx.icon.svg'
 import NextJs from '@icons/nextjs.icon.svg'
@@ -28,7 +28,7 @@ export const skillsIconsArr = [
   <FramerMotion key={9} />,
   <Gsap key={10} />,
   <ReactNative key={11} />,
-  <Ionic key={12} />,
+  <AWS key={12} />,
   <Angular key={13} />,
   <NodeJs key={14} />,
   <TypeScript key={15} />
