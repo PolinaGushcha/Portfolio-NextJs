@@ -293,7 +293,9 @@ export const WORKS_CARDS: IWorkSection[] = [
         id: 3,
         title: 'Pinterest Clone',
         description:
-          'A cross-platform mobile app cloning core Pinterest functionality, built with React Native and Expo SDK 57. Features include a browsable image feed with search, pin detail views, image upload/picking, and tab-based navigation',
+          'A cross-platform mobile app cloning core Pinterest functionality, built with React Native' +
+          ' and Expo SDK 57. Features include a browsable image feed with search, pin detail views,' +
+          ' image upload/picking, and tab-based navigation',
         link: 'https://github.com/PolinaGushcha/PinterestClone-ReactNative-Expo',
         image: PinterestImage
       }
@@ -365,7 +367,8 @@ export const WORKS_CARDS: IWorkSection[] = [
         title: 'Cinema Booking',
         description:
           'Full-stack cinema seat-booking web application with a React/TypeScript frontend and a' +
-          ' Node.js/Express REST API, backed by Cassandra DB. Fully containerized with Docker Compose, including an automated init job for replica' +
+          ' Node.js/Express REST API, backed by Cassandra DB. Fully containerized with Docker Compose,' +
+          ' including an automated init job for replica' +
           ' set setup and database seeding (cities, films, cinemas, timeslots, ~40k seat documents).',
         image: CinemaBookingImage
       }
