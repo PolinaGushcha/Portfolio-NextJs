@@ -66,12 +66,6 @@ const CodeBracketsIcon = () => (
   </svg>
 )
 
-const TriangleIcon = () => (
-  <svg viewBox='0 0 24 24' fill='currentColor' width={20} height={20}>
-    <path d='M12 3L2 21h20L12 3z' />
-  </svg>
-)
-
 const SearchPlusIcon = () => (
   <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={1.8} width={20} height={20}>
     <circle cx='11' cy='11' r='8' />
@@ -95,9 +89,8 @@ export const AI_TOOLS = [
   { id: 1, name: 'Claude Code', icon: <TerminalIcon />, color: '#D4722A' },
   { id: 2, name: 'ChatGPT', icon: <ChatBubbleIcon />, color: '#10A37F' },
   { id: 4, name: 'Cursor', icon: <CodeBracketsIcon />, color: '#8B5CF6' },
-  { id: 5, name: 'v0.dev', icon: <TriangleIcon />, color: '#E2E8F0' },
-  { id: 6, name: 'Perplexity', icon: <SearchPlusIcon />, color: '#5436DA' },
-  { id: 7, name: 'n8n', icon: <WorkflowIcon />, color: '#EA4B71' }
+  { id: 5, name: 'Perplexity', icon: <SearchPlusIcon />, color: '#5436DA' },
+  { id: 6, name: 'n8n', icon: <WorkflowIcon />, color: '#EA4B71' }
 ]
 
 const Icon = ({ d }: { d: string }) => (
