@@ -71,11 +71,18 @@ export const Works = () => {
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
-                {card.link && (
-                  <a className={styles.cardLink} href={card.link} target='_blank' rel='noopener noreferrer'>
-                    View project →
-                  </a>
-                )}
+                <div className={styles.cardLinks}>
+                  {card.link && (
+                    <a className={styles.cardLink} href={card.link} target='_blank' rel='noopener noreferrer'>
+                      View project →
+                    </a>
+                  )}
+                  {card.figmaLink && (
+                    <a className={styles.cardLink} href={card.figmaLink} target='_blank' rel='noopener noreferrer'>
+                      View Figma →
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

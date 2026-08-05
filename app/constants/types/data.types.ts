@@ -38,6 +38,7 @@ export interface IWorkCard {
   title: string
   description: string
   link?: string
+  figmaLink?: string
   image?: StaticImageData
 }
 

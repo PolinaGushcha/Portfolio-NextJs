@@ -1,11 +1,17 @@
+import CinemaBookingImage from '@images/cinema-app.png'
+import CoincapImage from '@images/coincap-app.png'
 import CookingAIImage from '@images/cooking-ai-app.png'
 import IrregularVerbsImage from '@images/irregular-verbs-app.png'
+import PinterestImage from '@images/pinterest-app.png'
 import PlantsImage from '@images/plants-app.png'
+import PomodoroImage from '@images/pomodoro-app.png'
 import PortfolioImage from '@images/portfolio-app.png'
+import PostureImage from '@images/posture-app.png'
 import SpeechScribeImage from '@images/speechscribe-audio-app.png'
 import TaskManagerImage from '@images/task-manager-app.png'
+import TrainTicketsImage from '@images/train-tickets-app.png'
+import YoutubeClientImage from '@images/youtube-client-app.png'
 
-// import CoincapImage from '@images/coincap-app.png'
 import { IEducationCards, IExperienceCard, ITechniquesOptions, IWorkSection } from './types/data.types'
 
 export const SECTIONIDS: string[] = ['greeting', 'experience', 'skills', 'ai', 'works', 'contacts']
@@ -124,8 +130,9 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     certificateLink: '',
     description:
       'Completed the AWS Cloud Practitioner Essentials course, covering core cloud concepts, AWS global infrastructure, compute, ' +
-      'networking, storage, databases, security, monitoring, and cloud economics. Gained practical understanding of key AWS services including ' +
-      'EC2, Lambda, S3, RDS, IAM, and CloudWatch, as well as cloud migration strategies and the Well-Architected Framework.',
+      'networking, storage, databases, security, monitoring, and cloud economics, including EC2, Lambda, S3, RDS, IAM, and CloudWatch. ' +
+      'This gives me a working understanding of the infrastructure behind the apps I build, so I can reason about deployment, ' +
+      'environment configuration, and backend integrations rather than treating the cloud as a black box.',
     date: '2026'
   },
   {
@@ -135,9 +142,9 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     organizationLink: 'https://rs.school/',
     certificateLink: 'https://app.rs.school/certificate/d3d024a3',
     description:
-      'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. ' +
-      'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week. ' +
-      'At the end of the course, she was in the top 5% of all students in terms of academic achievement',
+      'An 12-week, project-based Angular course for developers with a solid JavaScript/TypeScript foundation, requiring 30-40 hours ' +
+      'of study per week and covering Angular Material, RxJS, and NgRx. Graduated in the top 5% of all students. ' +
+      'It sharpened my grasp of reactive state management and object-oriented programming, which I now use in both my React and Angular projects.',
     date: 'date'
   },
   {
@@ -147,8 +154,9 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     organizationLink: 'https://teachmeskills.by/',
     certificateLink: 'https://drive.google.com/file/d/1_eCjKxE3ahGqSZjoMzH9SE7Ab8oYkpDQ/view',
     description:
-      'On this 7-month course I learned how to work with webpack and React library. Also I was introduced to ' +
-      'Typescript. Developed a couple of SPA applications using these technologies',
+      'An 8-month, hands-on course covering modern JavaScript, TypeScript, Webpack, and the React ecosystem, culminating in several ' +
+      'single-page applications built from scratch. This is where my React foundation was formed — the component design and ' +
+      'build-tooling instincts from this course are still the base I build on in every React and Next.js project I work on today.',
     date: 'date'
   },
   {
@@ -158,8 +166,9 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     certificateLink: '',
     organization: 'IT-Academy',
     description:
-      'In IT-Academy (brand of the Educational Center for Programming and High Technologies) on the course HTML, CSS & JavaScript the basics of ' +
-      'creating websites and programming in general were studied. The theory of the mentioned technologies was studied to a greater extent',
+      'A foundational course at IT-Academy (Educational Center for Programming and High Technologies) covering semantic HTML, ' +
+      'CSS layout, and core JavaScript. It gave me the fundamentals I rely on daily for writing clean, accessible markup and ' +
+      'debugging layout issues without depending on frameworks or libraries to do the thinking for me.',
     date: 'date'
   },
   {
@@ -167,7 +176,10 @@ export const EDUCATION_CARDS: IEducationCards[] = [
     name: 'Bachelor of Economic Informatics',
     organization: 'BSU faculty of economics',
     organizationLink: 'https://bsu.by/',
-    description: 'it includes general knowledge of project management, business analysis, reengineering, marketing and economics',
+    description:
+      'A degree combining IT with project management, business analysis, reengineering and economics. ' +
+      'This background helps me see features in terms of business impact - I can talk through trade-offs with PMs and stakeholders, ' +
+      'estimate work realistically, and prioritize what actually moves a product forward, not just what is technically interesting.',
     date: '2019-2023'
   }
 ]
@@ -177,7 +189,7 @@ export const TECHNIQUES_OPTIONS: ITechniquesOptions[] = [
   { id: 2, value: 'react', name: 'React' },
   { id: 3, value: 'nextjs', name: 'Next.js' },
   { id: 4, value: 'reactnative', name: 'React Native' },
-  { id: 5, value: 'ionic', name: 'Ionic' },
+  { id: 5, value: 'nodejs', name: 'Node.js' },
   { id: 6, value: 'angular', name: 'Angular' },
   { id: 7, value: 'other', name: 'Other' }
 ]
@@ -195,7 +207,7 @@ export const SKILLS_LIST: string[] = [
   'Framer Motion',
   'Gsap',
   'React Native',
-  'Ionic',
+  'AWS',
   'Angular',
   'Node.js',
   'TypeScript'
@@ -209,12 +221,24 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'Plants SPA',
+        title: 'Plants | Pixel Perfect landing page',
         description:
-          'AI-powered recipe generation SPA built at GSU-AI. Participated in app architecture ' +
-          'from the ground up — core components, navigation, and UI across a microservice setup.',
+          'Pixel-perfect landing page for a plant care and gardening service from a Figma design. ' +
+          'Focused on precise HTML and CSS implementation to match spacing, typography, and layout exactly,' +
+          ' then deployed the responsive site live on Vercel.',
         link: 'https://pixel-perfect-plants.vercel.app/',
+        figmaLink: 'https://www.figma.com/design/ntVt8IwlwzfVFMBuVVAze8/Plants?node-id=0-1&t=seb2KnaFjyvSUm9T-1',
         image: PlantsImage
+      },
+      {
+        id: 2,
+        title: 'Pomodoro Dashboard - Timer, Weather, Music & Tasks',
+        description:
+          'A feature-rich Pomodoro timer app built from scratch with vanilla JavaScript, HTML5, and SCSS —' +
+          ' no frameworks, no libraries. The goal was to go beyond a basic countdown and create a complete ' +
+          '"focus environment" that combines time management with ambient productivity tools.',
+        link: 'https://polinagushcha.github.io/Simple-Pomodoro-App/',
+        image: PomodoroImage
       }
     ]
   },
@@ -223,30 +247,24 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'Cooking AI',
+        title: 'Cooking AI — AI-powered recipe generation app',
         description:
-          'AI-powered recipe generation SPA built at GSU-AI. Participated in app architecture ' +
-          'from the ground up — core components, navigation, and UI across a microservice setup.',
+          'AI-powered recipe generation app built at Alivio-AI. Contributed to the app architecture ' +
+          'from the ground up — core components, navigation, and UI across a microservice setup — and ' +
+          'later adapted the same components into a React Native mobile version.',
         link: 'https://cooking.alivio.ai/',
         image: CookingAIImage
       },
       {
         id: 2,
-        title: 'Coincap',
+        title: 'CoinCap React — Cryptocurrency Tracker',
         description:
-          'React & React-Admin web app for real-time tracking of logistics deliveries at Milestep. ' +
-          'Built the full frontend from scratch, covering both client and admin sides.',
-        link: 'https://milestep.io/'
-      },
-      {
-        id: 3,
-        title: 'Task Manager',
-        description:
-          'React SPA for managing tasks and projects. Features include task creation, assignment, ' +
-          'status tracking, and a Kanban-style board for visualizing workflow. Implemented with React, ' +
-          'Redux, and Material-UI.',
-        link: 'https://main.dkc52pnqxg4rx.amplifyapp.com/',
-        image: TaskManagerImage
+          'A single-page application built with React and TypeScript that consumes the CoinCap public' +
+          ' REST API to display live cryptocurrency market data. Users can browse a paginated list of assets,' +
+          ' drill into individual coins to see price history charts, and manage a personal "portfolio" of holdings' +
+          ' with live total-value calculations.',
+        link: 'https://polinagushcha.github.io/Coincap-React',
+        image: CoincapImage
       }
     ]
   },
@@ -257,8 +275,8 @@ export const WORKS_CARDS: IWorkSection[] = [
         id: 1,
         title: 'Irregular Verbs',
         description:
-          'English grammar learning app published on the Apple App Store. Features interactive ' +
-          'verb drills and progress tracking built with React Native at Taqtile.',
+          'English grammar learning app published on the Apple App Store. Built with React Native at ' +
+          'Taqtile, with interactive verb drills, progress tracking, and a redesigned onboarding flow.',
         link: 'https://apps.apple.com/us/app/english-verbs-learn-grammar/id1638688704',
         image: IrregularVerbsImage
       },
@@ -266,9 +284,18 @@ export const WORKS_CARDS: IWorkSection[] = [
         id: 2,
         title: 'Posture',
         description:
-          'Health & posture monitoring mobile app available on Google Play. Developed within the ' +
-          'Ionic + React Native stack at Taqtile, with Firebase integration for user data.',
-        link: 'https://play.google.com/store/apps/details?id=io.ionic.posture&hl=en_US&pli=1'
+          'Health and posture monitoring mobile app available on Google Play. Refactored from Ionic to ' +
+          'React Native at Taqtile, integrating MediaPipe for real-time spine curvature analysis.',
+        link: 'https://play.google.com/store/apps/details?id=io.ionic.posture&hl=en_US&pli=1',
+        image: PostureImage
+      },
+      {
+        id: 3,
+        title: 'Pinterest Clone',
+        description:
+          'A cross-platform mobile app cloning core Pinterest functionality, built with React Native and Expo SDK 57. Features include a browsable image feed with search, pin detail views, image upload/picking, and tab-based navigation',
+        link: 'https://github.com/PolinaGushcha/PinterestClone-ReactNative-Expo',
+        image: PinterestImage
       }
     ]
   },
@@ -277,27 +304,19 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'HealthUApp',
-        description:
-          'Health & wellness platform built with Next.js at Taqtile. Implemented complex forms, ' +
-          'animations, SEO optimisation, and Firebase integration for a production health product.',
-        link: 'https://healthuapp.com/'
-      },
-      {
-        id: 2,
         title: 'SpeechScribe Audio',
         description:
-          'Chrome extension for audio transcription developed in Next.js at Taqtile. ' +
-          'Handles real-time speech recognition and published to the Chrome Web Store.',
+          'Chrome extension for automatic audio-to-text transcription, developed in Next.js at Taqtile. ' +
+          'Connects a Transformers.js speech model and supports user authentication and subscriptions.',
         link: 'https://chromewebstore.google.com/detail/' + 'speechscribe-audio-z-d%C5%BAwi/gijnkelbkbmaekkkgoalpimggbmoahol?hl=pl',
         image: SpeechScribeImage
       },
       {
-        id: 3,
+        id: 2,
         title: 'Portfolio (Next.js)',
         description:
-          'This portfolio is powered by Next.js — leveraging the App Router, server components, ' +
-          'and a serverless email API to deliver a fast, SEO-friendly developer showcase.',
+          'This portfolio itself, powered by Next.js — using the App Router, server components, and a ' +
+          'serverless email API to deliver a fast, SEO-friendly showcase of my work.',
         image: PortfolioImage
       }
     ]
@@ -307,25 +326,23 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'RS School Angular Project',
+        title: 'Youtube Client app',
         description:
-          'Capstone project for the RSSchool Angular course. Finished in the top 5% of all students, ' +
-          'covering advanced RxJS, NgRx state management, lazy loading, and unit testing.',
-        link: 'https://app.rs.school/certificate/d3d024a3'
+          'A single-page video browsing application inspired by YouTube, built with Angular 18 and ' +
+          'Angular Material. Implements user registration / login, a favorites system, video card creation, ' +
+          'and pagination, using NgRx for centralized state management and RxJS for reactive data flows. ' +
+          'Covered by unit tests (Jest) with a CI-ready test suite.',
+        image: YoutubeClientImage
       },
       {
         id: 2,
-        title: 'Admin Dashboard (Angular)',
+        title: 'Train Tickets app',
         description:
-          'Feature-rich data management dashboard built with Angular and Angular Material. ' +
-          'Includes role-based routing, reactive forms with validation, and REST API communication.'
-      },
-      {
-        id: 3,
-        title: 'E-commerce Storefront',
-        description:
-          'Angular SPA for an online storefront with a product catalogue, cart management, and ' +
-          'checkout flow. Optimised with OnPush change detection and lazy-loaded modules.'
+          'Angular 18 SPA for searching, booking, and managing train tickets, with dedicated user and admin dashboards.' +
+          'The manager and the root administrator can enter the system with: email: admin@admin.com | password: my-password ' +
+          'The ‘user’ role is assigned automatically; no further action is required.',
+        link: 'https://train-a-app.netlify.app/home',
+        image: TrainTicketsImage
       }
     ]
   },
@@ -334,24 +351,23 @@ export const WORKS_CARDS: IWorkSection[] = [
     cards: [
       {
         id: 1,
-        title: 'Serverless Email API',
+        title: 'Task Manager',
         description:
-          'Node.js serverless function (Next.js API route) powering the contact form on this ' +
-          'portfolio. Validates input and sends email via Nodemailer with environment-based config.'
+          'A full-stack task planner built on the MERN stack (MongoDB, Express, React, Node.js),' +
+          ' designed and shipped end-to-end — from data model to deployed containers on AWS EC2. React SPA for' +
+          ' managing tasks and projects. Features include task creation, assignment, status tracking, and' +
+          ' a Kanban-style board for visualizing workflow.',
+        link: 'https://main.dkc52pnqxg4rx.amplifyapp.com/',
+        image: TaskManagerImage
       },
       {
         id: 2,
-        title: 'REST API Boilerplate',
+        title: 'Cinema Booking',
         description:
-          'Express + TypeScript REST API with JWT authentication, request validation via Zod, ' +
-          'and Prisma ORM. Designed as a reusable backend starter for full-stack projects.'
-      },
-      {
-        id: 3,
-        title: 'Real-time Chat Server',
-        description:
-          'WebSocket chat server built with Node.js and Socket.IO. Supports multiple rooms, ' +
-          'typing indicators, and message history stored in a lightweight SQLite database.'
+          'Full-stack cinema seat-booking web application with a React/TypeScript frontend and a' +
+          ' Node.js/Express REST API, backed by Cassandra DB. Fully containerized with Docker Compose, including an automated init job for replica' +
+          ' set setup and database seeding (cities, films, cinemas, timeslots, ~40k seat documents).',
+        image: CinemaBookingImage
       }
     ]
   }
