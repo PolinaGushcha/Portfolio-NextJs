@@ -60,8 +60,9 @@ export const GreetingTitle = () => {
           </div>
         </h1>
         <p className={styles.text}>
-          Junior Frontend developer on mobile and web applications with more than 3 years of experience. I develop both beautiful smooth animation of
-          interfaces and work with Rest API. My broad experience includes the fields of e-commerce, health apps, logistics and management.
+          Frontend developer with 3+ years building smooth, animated interfaces for web and mobile — from{' '}
+          <span style={{ whiteSpace: 'nowrap' }}>e-commerce</span> to healthcare and resource management platforms. I turn complex REST API
+          integrations into fast, intuitive user experiences.
         </p>
         <div className={styles.mainLinks}>
           <Link href='/files/CV_Frontend_Dev_Polina.pdf' download target='_blank'>
