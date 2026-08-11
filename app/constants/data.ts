@@ -1,6 +1,7 @@
 import CinemaBookingImage from '@images/cinema-app.png'
 import CoincapImage from '@images/coincap-app.png'
 import CookingAIImage from '@images/cooking-ai-app.png'
+import EnglishCardsImage from '@images/english-cards-app.png'
 import IrregularVerbsImage from '@images/irregular-verbs-app.png'
 import PinterestImage from '@images/pinterest-app.png'
 import PlantsImage from '@images/plants-app.png'
@@ -298,6 +299,17 @@ export const WORKS_CARDS: IWorkSection[] = [
           ' image upload/picking, and tab-based navigation',
         link: 'https://github.com/PolinaGushcha/PinterestClone-ReactNative-Expo',
         image: PinterestImage
+      },
+      {
+        id: 4,
+        title: 'English Cards',
+        description:
+          'English Cards — a mobile app (React Native, iOS/Android) for learning English vocabulary' +
+          ' through flashcards and mini-games (matching pairs, word completion, spelling,' +
+          ' fill-in-the-blank, tests), with AI-assisted features, favourites, subscriptions, and' +
+          ' daily "word of the day" reminders.',
+        link: 'https://play.google.com/store/apps/details?id=com.englishingames.englishcards&hl=en',
+        image: EnglishCardsImage
       }
     ]
   },
