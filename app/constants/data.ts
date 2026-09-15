@@ -264,7 +264,7 @@ export const WORKS_CARDS: IWorkSection[] = [
           ' REST API to display live cryptocurrency market data. Users can browse a paginated list of assets,' +
           ' drill into individual coins to see price history charts, and manage a personal "portfolio" of holdings' +
           ' with live total-value calculations.',
-        link: 'https://polinagushcha.github.io/Coincap-React',
+        link: 'https://coincap-react-bnu0s6gnh-polinagushchas-projects.vercel.app/Coincap-React?page=1',
         image: CoincapImage
       }
     ]
@@ -346,7 +346,8 @@ export const WORKS_CARDS: IWorkSection[] = [
           'Angular Material. Implements user registration / login, a favorites system, video card creation, ' +
           'and pagination, using NgRx for centralized state management and RxJS for reactive data flows. ' +
           'Covered by unit tests (Jest) with a CI-ready test suite.',
-        image: YoutubeClientImage
+        image: YoutubeClientImage,
+        link: 'https://polinagushcha.github.io/Youtube-app/'
       },
       {
         id: 2,
