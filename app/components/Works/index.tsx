@@ -35,7 +35,8 @@ export const Works = () => {
     }, EXIT_DURATION)
   }
 
-  const activeCards = WORKS_CARDS[displayIndex]?.cards ?? []
+  const activeSection = WORKS_CARDS[displayIndex]
+  const activeCards = activeSection?.cards ?? []
 
   return (
     <section className={styles.works} id='works'>
@@ -66,8 +67,18 @@ export const Works = () => {
 
         <div className={clsx(styles.cardContainer, isExiting && styles.cardExiting)}>
           {activeCards.map(card => (
-            <div className={styles.card} key={card.id}>
-              <div className={styles.image}>{card.image ? <Image className={styles.imageObject} src={card.image} alt={card.title} /> : null}</div>
+            <div className={styles.card} key={`${activeSection?.tech}-${card.id}`}>
+              <div className={styles.image}>
+                {card.image ? (
+                  <Image
+                    className={styles.imageObject}
+                    src={card.image}
+                    alt={card.title}
+                    placeholder='blur'
+                    sizes='(max-width: 768px) 100vw, 380px'
+                  />
+                ) : null}
+              </div>
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
